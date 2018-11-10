@@ -24,25 +24,34 @@ const HeroSection = styled(Section)`
   align-items: center;
   ${media.tablet`
     display: block;
+    padding-top: 200px;
+  `};
+  ${media.phablet`
+    padding-top: 150px;
+  `};
+  ${media.phone`
+    padding-top: 130px;
   `};
 `;
 
-const AboutSection = styled(Section)`
-`;
+// const AboutSection = styled(Section)`
+// `;
 
-const ArticlesSection = styled(Section)`
-`;
+// const ArticlesSection = styled(Section)`
+// `;
 
-const ProjectsSection = styled(Section)`
-`;
+// const ProjectsSection = styled(Section)`
+// `;
 
-const ContactSection = styled(Section)`
-`;
+// const ContactSection = styled(Section)`
+// `;
 
 const LeftSection = styled.div`
   flex: 1;
-  ${media.phablet`
-    margin-top: 120px;
+  ${media.tablet`
+    padding: 0px 40px;
+    text-align: center;
+    margin-bottom: 20px;
   `};
 `;
 
@@ -53,23 +62,31 @@ const LeftText = styled.p`
   letter-spacing: 4px;
   text-transform: uppercase;
   padding-right: ${() => `${getRandomInt(0, 100)}px`};
-  padding-top: ${() => `${getRandomInt(0, 25)}px`};
+  /* padding-top: ${() => `${getRandomInt(0, 25)}px`}; */
   ${media.tablet`
     font-size: 14px;
   `};
-  ${media.phablet`
+  ${media.tablet`
     font-size: 12px;
     padding-right: 0;
     text-align: center;
     padding-top: 0px;
+    display: inline-block;
+    text-transform: none;
+    letter-spacing: 2px;
+    margin-left: 10px;
   `};
 `;
 
 const RightSection = styled.div`
   padding-top: ${() => `${getRandomInt(80, 200)}px`};
   flex: 1;
+  ${media.tablet`
+    padding: 20px 130px 0px;
+    text-align: center;
+  `};
   ${media.phablet`
-    padding-top: 20px;
+    padding: 20px 30px 0px;
   `};
 `;
 
@@ -85,6 +102,26 @@ const NameDesktop = styled.h3`
   }
   ${media.tablet`
     font-size: 15px;
+  `};
+  ${media.tablet`
+    display: none;
+  `};
+`;
+
+const NameMobile = styled.h3`
+  font-weight: 700;
+  font-size: 15px;
+  letter-spacing: 10px;
+  text-transform: uppercase;
+  color: black;
+  display: none;
+  margin-bottom: 20px;
+  margin-top: 20px;
+  strong {
+    text-decoration: line-through;
+  }
+  ${media.tablet`
+    display: block;
   `};
 `;
 
@@ -102,8 +139,12 @@ const RightText = styled.span`
   ${media.tablet`
     font-size: 12px;
   `};
-  ${media.phablet`
-    font-size: 10px;
+  ${media.tablet`
+    font-size: 12px;
+    line-height: 16px;
+    display: inline-block;
+    text-align: center;
+    letter-spacing: 2px;
   `};
 `;
 
@@ -120,6 +161,9 @@ const HeroImage = styled.div`
   :hover {
     background-color: transparent;
   }
+  ${media.tablet`
+    margin: 0px auto;
+  `};
 `;
 
 const IndexPage = () => (
@@ -129,12 +173,14 @@ const IndexPage = () => (
         <LeftText>Welcome</LeftText>
         <LeftText>to</LeftText>
         <LeftText>the</LeftText>
-        <LeftText>portfolio</LeftText>
+        <br />
+        <LeftText>Portfolio</LeftText>
         <LeftText>of</LeftText>
+        <NameMobile>Qu<strong>oc</strong> Kh<strong>a</strong>nh</NameMobile>
       </LeftSection>
       <HeroImage src={heroImage} />
       <RightSection>
-        <NameDesktop>Qu<strong>ốc</strong> Kh<strong>á</strong>nh</NameDesktop>
+        <NameDesktop>Qu<strong>oc</strong> Kh<strong>a</strong>nh</NameDesktop>
         <RightText>Freelancer</RightText>
         <RightText>Developer</RightText>
         <RightText>and</RightText>
@@ -144,10 +190,10 @@ const IndexPage = () => (
         <RightText>HCMC.</RightText>
       </RightSection>
     </HeroSection>
-    <AboutSection />
+    {/* <AboutSection />
     <ArticlesSection />
     <ProjectsSection />
-    <ContactSection />
+    <ContactSection /> */}
   </Layout>
 );
 
