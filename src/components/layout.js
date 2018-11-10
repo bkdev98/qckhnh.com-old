@@ -4,6 +4,7 @@ import Helmet from 'react-helmet';
 import { StaticQuery, graphql } from 'gatsby';
 
 import './layout.css';
+import thumbnail from '../images/thumbnail.png';
 
 const Layout = ({ children }) => (
   <StaticQuery
@@ -22,13 +23,13 @@ const Layout = ({ children }) => (
           title={data.site.siteMetadata.title}
           meta={[
             { name: 'description', content: 'Welcome to my portfolio!' },
-            { name: 'image', content: 'https://qckhnh.com/images/thumbnail.png' },
+            { name: 'image', content: thumbnail },
             { name: 'keywords', content: 'qckhnh' },
             { name: 'og:title', content: 'qckhnh.com | Quoc Khanh' },
             { name: 'og:url', content: 'https://qckhnh.com' },
             { name: 'og:type', content: 'website' },
             { name: 'og:description', content: 'Welcome to my portfolio!' },
-            { name: 'og:image', content: 'https://qckhnh.com/images/thumbnail.png' },
+            { name: 'og:image', content: thumbnail },
           ]}
         >
           <html lang="en" />
