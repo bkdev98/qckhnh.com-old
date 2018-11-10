@@ -13,6 +13,7 @@ module.exports = {
     },
     'gatsby-transformer-sharp',
     'gatsby-plugin-sharp',
+    'gatsby-transformer-remark',
     {
       resolve: 'gatsby-plugin-manifest',
       options: {
@@ -30,6 +31,13 @@ module.exports = {
       resolve: 'gatsby-plugin-google-analytics',
       options: {
         trackingId: 'UA-121546163-2',
+      },
+    },
+    {
+      resolve: 'gatsby-source-filesystem',
+      options: {
+        path: `${__dirname}/static/articles`,
+        name: 'articles',
       },
     },
     'gatsby-plugin-netlify-cms',

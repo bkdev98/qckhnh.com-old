@@ -8,6 +8,7 @@ const Article = styled.div`
   width: 300px;
   position: relative;
   cursor: pointer;
+  margin-bottom: 126px;
 `;
 
 const Info = styled.div`
@@ -60,10 +61,12 @@ const Image = styled.div`
   position: absolute;
   width: 100%;
   height: 100%;
-  background-image: url('https://www.danielspatzek.com/backend/assets/Uploads/doty-interactive-300x160.jpg');
+  background-image: url(${props => props.url});
   z-index: 0;
   background-color: #3c3c3e;
   background-blend-mode: screen;
+  background-position: center;
+  background-size: cover;
   filter: grayscale(1);
   transition: all 0.8s ease-in;
   ${Article}:hover & {
@@ -151,11 +154,11 @@ const ReadMore = styled.div`
   }
 `;
 
-const ArticleCard = () => (
+const ArticleCard = ({ data: { frontmatter } }) => (
   <Article>
     <HoverWrapper>
       <ImageWrapper hover>
-        <Image hover />
+        <Image hover url={frontmatter.thumbnail} />
       </ImageWrapper>
       <HoverLine top />
       <HoverLine right />
@@ -163,18 +166,18 @@ const ArticleCard = () => (
       <HoverLine left />
     </HoverWrapper>
     <Info>
-      <Tag>General</Tag>
+      <Tag>{frontmatter.tag}</Tag>
       <Seperator>|</Seperator>
-      <Date>20-11-2018</Date>
+      <Date>{frontmatter.date}</Date>
     </Info>
     <ImageWrapper>
-      <Image />
+      <Image url={frontmatter.thumbnail} />
     </ImageWrapper>
     <Header>
-      <Title>Aliqua nulla sint sit tempor minim</Title>
+      <Title>{frontmatter.title}</Title>
     </Header>
     <Description>
-      Aute nostrud exercitation commodo commodo incididunt ullamco officia labore ipsum pariatur ipsum dolore.
+      {frontmatter.description}
     </Description>
     <ReadMore>
         Read More
