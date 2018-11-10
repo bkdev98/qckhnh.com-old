@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import AnchorLink from 'react-anchor-link-smooth-scroll';
+import { Link } from 'gatsby';
 import { Spring } from 'react-spring';
 
 import styled from 'styled-components';
@@ -61,7 +61,7 @@ const NavListItem = styled.li`
   }
 `;
 
-const NavLink = styled(AnchorLink)`
+const NavLink = styled(Link)`
   padding: 3px 20px 20px;
   width: 100%;
   text-decoration: none;
@@ -84,28 +84,28 @@ class Menu extends Component {
             <Spring from={{ marginBottom: 10, opacity: 0 }} to={{ marginBottom: 0, opacity: 1 }} delay={300}>
               {styles => (
                 <NavListItem style={styles}>
-                  <NavLink href='#about'>About</NavLink>
+                  <NavLink to='/'>About</NavLink>
                 </NavListItem>
               )}
             </Spring>
             <Spring from={{ marginBottom: 10, opacity: 0 }} to={{ marginBottom: 0, opacity: 1 }} delay={400}>
               {styles => (
                 <NavListItem style={styles}>
-                  <NavLink href='#articles'>Articles</NavLink>
+                  <NavLink to='/blog'>Articles</NavLink>
                 </NavListItem>
               )}
             </Spring>
             <Spring from={{ marginBottom: 10, opacity: 0 }} to={{ marginBottom: 0, opacity: 1 }} delay={500}>
               {styles => (
                 <NavListItem style={styles}>
-                  <NavLink href='#projects'>Projects</NavLink>
+                  <NavLink to='/projects'>Projects</NavLink>
                 </NavListItem>
               )}
             </Spring>
             <Spring from={{ marginBottom: 10, opacity: 0 }} to={{ marginBottom: 0, opacity: 1 }} delay={600}>
               {styles => (
                 <NavListItem style={styles}>
-                  <NavLink href='#contact'>Contact</NavLink>
+                  <NavLink to='contact'>Contact</NavLink>
                 </NavListItem>
               )}
             </Spring>

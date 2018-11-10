@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import styled from 'styled-components';
-import AnchorLink from 'react-anchor-link-smooth-scroll';
 import { Spring } from 'react-spring';
+import { Link } from 'gatsby';
 
 import { throttle } from '../utils/math';
 import { media } from '../utils/media';
@@ -169,7 +169,7 @@ const NavListItem = styled.li`
   }
 `;
 
-const NavListItemLink = styled(AnchorLink)`
+const NavListItemLink = styled(Link)`
   display: inline-block;
   text-decoration-skip-ink: auto;
   color: inherit;
@@ -180,7 +180,7 @@ const NavListItemLink = styled(AnchorLink)`
   padding: 12px 10px;
 `;
 
-const LogoWrapper = styled(AnchorLink)`
+const LogoWrapper = styled(Link)`
   height: 42px;
   display: flex;
   justify-content: center;
@@ -274,7 +274,7 @@ class Header extends Component {
         <Nav>
           <Spring from={{ marginBottom: 10, opacity: 0 }} to={{ marginBottom: 0, opacity: 1 }}>
             {styles => (
-              <LogoWrapper href='#hero' style={styles}>
+              <LogoWrapper to='/' style={styles}>
                 <Logo isScrolled={scrollDirection !== 'none'} />
               </LogoWrapper>
             )}
@@ -291,28 +291,28 @@ class Header extends Component {
               <Spring from={{ marginBottom: 10, opacity: 0 }} to={{ marginBottom: 0, opacity: 1 }} delay={300}>
                 {styles => (
                   <NavListItem style={styles}>
-                    <NavListItemLink offset={() => 100} href='#about'>About</NavListItemLink>
+                    <NavListItemLink to='/'>About</NavListItemLink>
                   </NavListItem>
                 )}
               </Spring>
               <Spring from={{ marginBottom: 10, opacity: 0 }} to={{ marginBottom: 0, opacity: 1 }} delay={400}>
                 {styles => (
                   <NavListItem style={styles}>
-                    <NavListItemLink href='#articles'>Articles</NavListItemLink>
+                    <NavListItemLink to='/blog'>Blog</NavListItemLink>
                   </NavListItem>
                 )}
               </Spring>
               <Spring from={{ marginBottom: 10, opacity: 0 }} to={{ marginBottom: 0, opacity: 1 }} delay={500}>
                 {styles => (
                   <NavListItem style={styles}>
-                    <NavListItemLink href='#projects'>Projects</NavListItemLink>
+                    <NavListItemLink to='/projects'>Projects</NavListItemLink>
                   </NavListItem>
                 )}
               </Spring>
               <Spring from={{ marginBottom: 10, opacity: 0 }} to={{ marginBottom: 0, opacity: 1 }} delay={600}>
                 {styles => (
                   <NavListItem style={styles}>
-                    <NavListItemLink href='#contact'>Contact</NavListItemLink>
+                    <NavListItemLink to='/contact'>Contact</NavListItemLink>
                   </NavListItem>
                 )}
               </Spring>
