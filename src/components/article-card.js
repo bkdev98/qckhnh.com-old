@@ -52,7 +52,7 @@ const ImageWrapper = styled.div`
   transition: all 0.2s;
   transition-delay: 0.4s;
   ${Article}:hover & {
-    transform: ${props => (!props.hover ? 'matrix(1, 0, 0, 1, 0, 20)' : 'unset')};
+    transform: ${props => (!props.hover ? 'matrix(1, 0, 0, 1, 0, 15)' : 'unset')};
     transition-delay: 0.2s;
   }
 `;

@@ -12,12 +12,12 @@ const Wrapper = styled(Section)`
   letter-spacing: 4px;
 `;
 
-const NotFound = () => (
+const Projects = () => (
   <Layout>
     <Wrapper>
-    Not found...
+    Code code...
     </Wrapper>
   </Layout>
 );
 
-export default NotFound;
+export default Projects;
