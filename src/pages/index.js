@@ -5,17 +5,45 @@ import Layout from '../components/layout';
 import heroImage from '../images/hero-image.jpg';
 
 import { getRandomInt } from '../utils/math';
+import { media } from '../utils/media';
 
-const Wrapper = styled.div`
+const Section = styled.div`
   height: 100vh;
-  width: 1000px;
+  min-width: 1000px;
   margin: 0px auto;
+  ${media.desktop`
+    min-width: 768px;
+  `};
+  ${media.tablet`
+    min-width: auto;
+  `};
+`;
+
+const HeroSection = styled(Section)`
   display: flex;
   align-items: center;
+  ${media.tablet`
+    display: block;
+  `};
+`;
+
+const AboutSection = styled(Section)`
+`;
+
+const ArticlesSection = styled(Section)`
+`;
+
+const ProjectsSection = styled(Section)`
+`;
+
+const ContactSection = styled(Section)`
 `;
 
 const LeftSection = styled.div`
   flex: 1;
+  ${media.phablet`
+    margin-top: 120px;
+  `};
 `;
 
 const LeftText = styled.p`
@@ -26,14 +54,26 @@ const LeftText = styled.p`
   text-transform: uppercase;
   padding-right: ${() => `${getRandomInt(0, 100)}px`};
   padding-top: ${() => `${getRandomInt(0, 25)}px`};
+  ${media.tablet`
+    font-size: 14px;
+  `};
+  ${media.phablet`
+    font-size: 12px;
+    padding-right: 0;
+    text-align: center;
+    padding-top: 0px;
+  `};
 `;
 
 const RightSection = styled.div`
   padding-top: ${() => `${getRandomInt(80, 200)}px`};
   flex: 1;
+  ${media.phablet`
+    padding-top: 20px;
+  `};
 `;
 
-const Name = styled.h3`
+const NameDesktop = styled.h3`
   font-weight: 700;
   font-size: 17px;
   letter-spacing: 10px;
@@ -43,6 +83,9 @@ const Name = styled.h3`
   strong {
     text-decoration: line-through;
   }
+  ${media.tablet`
+    font-size: 15px;
+  `};
 `;
 
 const RightText = styled.span`
@@ -56,6 +99,12 @@ const RightText = styled.span`
   margin-bottom: 1px;
   background-color: ${props => (props.highlight ? '#3C3C3E' : 'transparent')};
   color: ${props => (props.highlight ? 'white' : '#3C3C3E')};
+  ${media.tablet`
+    font-size: 12px;
+  `};
+  ${media.phablet`
+    font-size: 10px;
+  `};
 `;
 
 const HeroImage = styled.div`
@@ -64,7 +113,7 @@ const HeroImage = styled.div`
   background-image: url(${props => props.src});
   background-position: center;
   background-size: cover;
-  margin: 0px 40px;
+  margin: 0px 60px;
   background-color: #FB7EBB;
   background-blend-mode: luminosity;
   transition: all 0.25s cubic-bezier(0.645, 0.045, 0.355, 1) 0s;
@@ -75,7 +124,7 @@ const HeroImage = styled.div`
 
 const IndexPage = () => (
   <Layout>
-    <Wrapper>
+    <HeroSection>
       <LeftSection>
         <LeftText>Welcome</LeftText>
         <LeftText>to</LeftText>
@@ -85,7 +134,7 @@ const IndexPage = () => (
       </LeftSection>
       <HeroImage src={heroImage} />
       <RightSection>
-        <Name>Qu<strong>ốc</strong> Kh<strong>á</strong>nh</Name>
+        <NameDesktop>Qu<strong>ốc</strong> Kh<strong>á</strong>nh</NameDesktop>
         <RightText>Freelancer</RightText>
         <RightText>Developer</RightText>
         <RightText>and</RightText>
@@ -94,7 +143,11 @@ const IndexPage = () => (
         <RightText>from</RightText>
         <RightText>HCMC.</RightText>
       </RightSection>
-    </Wrapper>
+    </HeroSection>
+    <AboutSection />
+    <ArticlesSection />
+    <ProjectsSection />
+    <ContactSection />
   </Layout>
 );
 

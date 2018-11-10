@@ -337,6 +337,7 @@ ul {
   margin-bottom: 0;
   list-style-position: outside;
   list-style-image: none;
+  list-style-type: none;
 }
 ol {
   margin-left: 0;

@@ -8731,6 +8731,10 @@ rc@^1.0.1, rc@^1.1.2, rc@^1.1.6, rc@^1.2.7:
     minimist "^1.2.0"
     strip-json-comments "~2.0.1"
 
+react-anchor-link-smooth-scroll@^1.0.11:
+  version "1.0.11"
+  resolved "https://registry.yarnpkg.com/react-anchor-link-smooth-scroll/-/react-anchor-link-smooth-scroll-1.0.11.tgz#e53f55b89382df0d85470ebd20e6b349d62eb19d"
+
 react-dev-utils@^4.2.1:
   version "4.2.3"
   resolved "https://registry.yarnpkg.com/react-dev-utils/-/react-dev-utils-4.2.3.tgz#5b42d9ea58d5e9e017a2f57a40a8af408a3a46fb"
@@ -8787,6 +8791,10 @@ react-hot-loader@^4.1.0:
     react-lifecycles-compat "^3.0.4"
     shallowequal "^1.0.2"
 
+react-icons@^3.2.2:
+  version "3.2.2"
+  resolved "https://registry.yarnpkg.com/react-icons/-/react-icons-3.2.2.tgz#7b1dc795004a119a35175e62ecef91e5c9c90962"
+
 react-is@^16.6.0:
   version "16.6.1"
   resolved "https://registry.yarnpkg.com/react-is/-/react-is-16.6.1.tgz#f77b1c3d901be300abe8d58645b7a59e794e5982"
@@ -8801,6 +8809,12 @@ react-side-effect@^1.1.0:
   dependencies:
     exenv "^1.2.1"
     shallowequal "^1.0.1"
+
+react-spring@^6.1.8:
+  version "6.1.8"
+  resolved "https://registry.yarnpkg.com/react-spring/-/react-spring-6.1.8.tgz#ce20f0fb07722f977510ea865801df3fdc37d819"
+  dependencies:
+    "@babel/runtime" "^7.1.2"
 
 react@^16.5.1:
   version "16.6.1"

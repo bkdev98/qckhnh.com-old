@@ -5,6 +5,10 @@ import { StaticQuery, graphql } from 'gatsby';
 
 import './layout.css';
 import thumbnail from '../images/thumbnail.png';
+import Header from './header';
+import Footer from './footer';
+import Email from './email';
+import Social from './social';
 
 const Layout = ({ children }) => (
   <StaticQuery
@@ -34,9 +38,11 @@ const Layout = ({ children }) => (
         >
           <html lang="en" />
         </Helmet>
-        <div>
-          {children}
-        </div>
+        <Header />
+        {children}
+        <Email />
+        <Social />
+        <Footer />
       </>
     )}
   />
