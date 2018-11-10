@@ -40,8 +40,8 @@ const SocialLink = styled.a`
     color: white;
   }
   svg {
-    width: 20px;
-    height: 20px;
+    width: 16px;
+    height: 16px;
   }
 `;
 
@@ -53,6 +53,9 @@ const Copy = styled.p`
   a {
     color: #FB7EBB;
   }
+  ${media.phablet`
+    font-size: 12px;
+  `};
 `;
 
 const Footer = () => (

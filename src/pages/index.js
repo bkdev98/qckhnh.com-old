@@ -130,7 +130,7 @@ const RightText = styled.span`
   font-size: 13px;
   font-weight: 300;
   text-align: left;
-  letter-spacing: 6px;
+  letter-spacing: 5px;
   line-height: 20px;
   padding: 0px 5px 0px 10px;
   margin-bottom: 1px;
