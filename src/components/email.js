@@ -52,7 +52,7 @@ const Link = styled.a`
 `;
 
 const Social = () => (
-  <Spring from={{ opacity: 0, bottom: -20 }} to={{ opacity: 1, bottom: 0 }} delay={1200}>
+  <Spring from={{ opacity: 0, bottom: -20 }} to={{ opacity: 1, bottom: 0 }} delay={2500}>
     {styles => (
       <Wrapper style={styles}>
         <Container>

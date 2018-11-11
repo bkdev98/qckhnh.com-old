@@ -9919,6 +9919,14 @@ react-redux@^4.0.0, react-redux@^4.4.0:
     loose-envify "^1.1.0"
     prop-types "^15.5.4"
 
+react-reveal-text@^0.1.1:
+  version "0.1.1"
+  resolved "https://registry.yarnpkg.com/react-reveal-text/-/react-reveal-text-0.1.1.tgz#97ed4c3cbd3671c0d79bcb4c80459c2ca69ef402"
+  dependencies:
+    prop-types "^15.6.0"
+    react "^16.0.0"
+    react-dom "^16.0.0"
+
 react-router-dom@^4.2.2:
   version "4.3.1"
   resolved "https://registry.yarnpkg.com/react-router-dom/-/react-router-dom-4.3.1.tgz#4c2619fc24c4fa87c9fd18f4fb4a43fe63fbd5c6"
@@ -10039,7 +10047,7 @@ react-waypoint@^7.1.0:
     consolidated-events "^1.1.0"
     prop-types "^15.0.0"
 
-react@^16.4.1, react@^16.5.1:
+react@^16.0.0, react@^16.4.1, react@^16.5.1:
   version "16.6.1"
   resolved "https://registry.yarnpkg.com/react/-/react-16.6.1.tgz#ee2aef4f0a09e494594882029821049772f915fe"
   dependencies:
