@@ -1,3 +1,5 @@
+/* eslint-disable no-param-reassign */
+
 export const defaultCharacters = '0123456789aAbBcCdDeEfFgGhHiIjJkKlLmMnNoOpPqQrRsStTuUvVwWxXyYzZ';
 export default class Flicker {
   constructor(min, max, delay, characters) {

@@ -7,7 +7,7 @@ import {
   cloneElementWithSpecifiedText,
 } from '../../utils/char';
 
-export default class FlickerText extends React.Component {
+class FlickerText extends React.Component {
   static propTypes = {
     tagName: PropTypes.string.isRequired,
     min: PropTypes.number,
@@ -34,11 +34,11 @@ export default class FlickerText extends React.Component {
     if (props.children) {
       this.linesToType = extractTextFromElement(props.children);
     }
-  }
 
-  state = {
-    textLines: [],
-  };
+    this.state = {
+      textLines: [],
+    };
+  }
 
   componentDidMount() {
     this.mounted = true;
@@ -88,3 +88,5 @@ export default class FlickerText extends React.Component {
     return <Tag>{innerTree}</Tag>;
   }
 }
+
+export default FlickerText;
