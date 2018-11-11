@@ -9,6 +9,7 @@ import heroImage from '../images/hero-image.jpg';
 import Section from './section';
 import { media } from '../utils/media';
 import { getRandomInt } from '../utils/math';
+import HeroFlicker from './hero-flicker';
 
 const Wrapper = styled(Section)`
   display: flex;
@@ -113,8 +114,8 @@ const RightText = styled.p`
   line-height: 20px;
   padding: 0px 5px 0px 10px;
   margin-bottom: 1px;
-  background-color: ${props => (props.highlight ? '#3C3C3E' : 'transparent')};
-  color: ${props => (props.highlight ? 'white' : '#3C3C3E')};
+  background-color: transparent;
+  color: #3C3C3E;
   ${media.tablet`
     font-size: 12px;
   `};
@@ -248,8 +249,7 @@ class Hero extends Component {
               <RightText>Freelancer</RightText>
               <RightText>Developer</RightText>
               <RightText>and</RightText>
-              <RightText highlight>Software</RightText>
-              <RightText highlight>Artisan</RightText>
+              <HeroFlicker />
               <RightText>from</RightText>
               <RightText>HCMC.</RightText>
             </RightSection>
