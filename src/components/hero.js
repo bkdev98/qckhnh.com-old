@@ -245,7 +245,7 @@ class Hero extends Component {
         <Spring from={{ opacity: 0, paddingLeft: 30 }} to={{ opacity: 1, paddingLeft: 0 }} delay={3200}>
           {props => (
             <RightSection style={props}>
-              <NameDesktop>Qu<strong>oc</strong> Kh<strong>a</strong>nh</NameDesktop>
+              <NameDesktop>Q<strong>uo</strong>c Kh<strong>a</strong>nh</NameDesktop>
               <RightText>Freelancer</RightText>
               <RightText>Developer</RightText>
               <RightText>and</RightText>
