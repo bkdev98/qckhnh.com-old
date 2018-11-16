@@ -117,6 +117,9 @@ export const pageQuery = graphql`
             date
           }
           html
+          fields {
+            slug
+          }
         }
       }
     }

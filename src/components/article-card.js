@@ -2,13 +2,16 @@
 
 import React from 'react';
 import styled from 'styled-components';
+import { Link } from 'gatsby';
 
-const Article = styled.div`
+const Article = styled(Link)`
   display: block;
   width: 300px;
   position: relative;
   cursor: pointer;
+  text-decoration: none;
   margin-bottom: 126px;
+  color: #3c3c3e;
 `;
 
 const Info = styled.div`
@@ -154,8 +157,8 @@ const ReadMore = styled.div`
   }
 `;
 
-const ArticleCard = ({ data: { frontmatter } }) => (
-  <Article>
+const ArticleCard = ({ data: { frontmatter, fields } }) => (
+  <Article to={fields.slug}>
     <HoverWrapper>
       <ImageWrapper hover>
         <Image hover url={frontmatter.thumbnail} />

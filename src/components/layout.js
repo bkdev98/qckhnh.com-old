@@ -2,6 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import Helmet from 'react-helmet';
 import { StaticQuery, graphql } from 'gatsby';
+import styled from 'styled-components';
 
 import './layout.css';
 import thumbnail from '../images/thumbnail.png';
@@ -9,6 +10,15 @@ import Header from './header';
 import Footer from './footer';
 import Email from './email';
 import Social from './social';
+
+const Wrapper = styled.div`
+  overflow: hidden;
+  ::after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+`;
 
 const Layout = ({ children }) => (
   <StaticQuery
@@ -39,7 +49,9 @@ const Layout = ({ children }) => (
           <html lang="en" />
         </Helmet>
         <Header />
-        {children}
+        <Wrapper>
+          {children}
+        </Wrapper>
         <Email />
         <Social />
         <Footer />
