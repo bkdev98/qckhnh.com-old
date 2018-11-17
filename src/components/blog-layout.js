@@ -1,8 +1,9 @@
-import React from 'react';
-import PropTypes from 'prop-types';
+import React, { Component } from 'react';
 import Helmet from 'react-helmet';
 import { graphql } from 'gatsby';
 import styled from 'styled-components';
+import ReactRevealText from 'react-reveal-text';
+import { Spring, Transition } from 'react-spring';
 
 import Layout from './layout';
 
@@ -21,8 +22,6 @@ const Wrapper = styled.div`
 `;
 
 const BlogInfo = styled.div`
-  opacity: 1;
-  transform: matrix(1, 0, 0, 1, 0, 0);
   margin-left: 95px;
   z-index: 21;
   position: absolute;
@@ -68,7 +67,7 @@ const TextWrapper = styled.div`
   margin-bottom: 250px;
 `;
 
-const Title = styled.div`
+const Title = styled(ReactRevealText)`
   padding: 0 100px;
   position: relative;
   min-height: 115px;
@@ -87,52 +86,96 @@ const Content = styled.div`
   margin-left: 100px;
   margin-right: 100px;
   position: relative;
-  font-size: 14px;
-  letter-spacing: 3px;
+  font-size: 13px;
+  letter-spacing: 2px;
   z-index: 21;
   margin-bottom: 185px;
   margin-top: 80px;
   color: #3c3c3e;
-  font-weight: 400;
+  font-weight: 300;
+  ::selection {
+    background-color: #3c3c3e;
+    color: #FFF;
+  }
 `;
 
-const BlogLayout = ({ data: { markdownRemark: article } }) => (
-  <>
-    <Helmet
-      title={article.frontmatter.title}
-      meta={[
-        { name: 'description', content: article.frontmatter.description },
-        { name: 'image', content: article.frontmatter.thumbnail },
-        { name: 'keywords', content: 'qckhnh' },
-        { name: 'og:title', content: `${article.frontmatter.title} | qckhnh.com` },
-        { name: 'og:url', content: `https://qckhnh.com${article.slug}` },
-        { name: 'og:type', content: 'website' },
-        { name: 'og:description', content: article.frontmatter.description },
-        { name: 'og:image', content: article.frontmatter.thumbnail },
-      ]}
-    >
-      <html lang="en" />
-    </Helmet>
-    <Layout>
-      <Wrapper>
-        <BlogInfo>
-          <Tag>{article.frontmatter.tag}</Tag>
-          <Seperator> |</Seperator>
-          <Date>{article.frontmatter.date}</Date>
-        </BlogInfo>
-        <Thumbnail url={article.frontmatter.thumbnail} />
-        <TextWrapper>
-          <Title>{article.frontmatter.title}</Title>
-          <Content dangerouslySetInnerHTML={{ __html: article.html }} />
-        </TextWrapper>
-      </Wrapper>
-    </Layout>
-  </>
-);
+class BlogLayout extends Component {
+  state = {
+    revealTitle: false,
+    transition: true,
+  }
 
-BlogLayout.propTypes = {
-  children: PropTypes.node.isRequired,
-};
+  componentDidMount() {
+    setTimeout(() => this.setState({ revealTitle: true }), 300);
+  }
+
+  componentWillUnmount() {
+    this.setState({ transition: false });
+  }
+
+  render() {
+    const { data: { markdownRemark: article } } = this.props;
+    const { revealTitle, transition } = this.state;
+
+    return (
+      <>
+        <Helmet
+          title={article.frontmatter.title}
+          meta={[
+            { name: 'description', content: article.frontmatter.description },
+            { name: 'image', content: article.frontmatter.thumbnail },
+            { name: 'keywords', content: 'qckhnh' },
+            { name: 'og:title', content: `${article.frontmatter.title} | qckhnh.com` },
+            { name: 'og:url', content: `https://qckhnh.com${article.slug}` },
+            { name: 'og:type', content: 'website' },
+            { name: 'og:description', content: article.frontmatter.description },
+            { name: 'og:image', content: article.frontmatter.thumbnail },
+          ]}
+        >
+          <html lang="en" />
+        </Helmet>
+        <Layout>
+          <Wrapper>
+            <Spring
+              from={{ opacity: 0, transform: 'matrix(1, 0, 0, 1, 0, -40)' }}
+              to={{ opacity: 1, transform: 'matrix(1, 0, 0, 1, 0, 0)' }}
+              delay={200}
+            >
+              {props => (
+                <BlogInfo style={props}>
+                  <Tag>{article.frontmatter.tag}</Tag>
+                  <Seperator> |</Seperator>
+                  <Date>{article.frontmatter.date}</Date>
+                </BlogInfo>
+              )}
+            </Spring>
+            <Transition
+              items={transition}
+              from={{ height: 0 }}
+              enter={{ height: 435 }}
+              leave={{ height: 0 }}
+              trail={200}
+            >
+              {transition => transition && (props => <Thumbnail url={article.frontmatter.thumbnail} style={props} />)}
+            </Transition>
+            <TextWrapper>
+              <Title show={revealTitle}>{article.frontmatter.title}</Title>
+              <Spring
+                from={{ opacity: 0, marginTop: 120 }}
+                to={{ opacity: 1, marginTop: 80 }}
+                delay={400}
+              >
+                {props => (
+                  <Content dangerouslySetInnerHTML={{ __html: article.html }} style={props} />
+                )}
+              </Spring>
+            </TextWrapper>
+          </Wrapper>
+        </Layout>
+      </>
+    );
+  }
+}
 
 export default BlogLayout;
 

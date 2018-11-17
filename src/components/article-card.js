@@ -3,6 +3,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import { Link } from 'gatsby';
+import { Spring } from 'react-spring';
 
 const Article = styled(Link)`
   display: block;
@@ -77,6 +78,17 @@ const Image = styled.div`
     filter: ${props => (!props.hover ? 'grayscale(1)' : 'unset')};
   }
 `;
+
+// const ImageLoading = styled.div`
+//   width: 0%;
+//   height: 100%;
+//   position: absolute;
+//   background-color: #FB7EBB;
+//   z-index: 12;
+//   right: 0;
+//   left: initial;
+//   top: 0;
+// `;
 
 const Header = styled.div`
   margin-left: 25px;
@@ -161,7 +173,9 @@ const ArticleCard = ({ data: { frontmatter, fields } }) => (
   <Article to={fields.slug}>
     <HoverWrapper>
       <ImageWrapper hover>
-        <Image hover url={frontmatter.thumbnail} />
+        <Spring from={{ opacity: 0 }} to={{ opacity: 1 }} delay={500}>
+          {props => <Image hover url={frontmatter.thumbnail} style={props} />}
+        </Spring>
       </ImageWrapper>
       <HoverLine top />
       <HoverLine right />
@@ -174,7 +188,12 @@ const ArticleCard = ({ data: { frontmatter, fields } }) => (
       <Date>{frontmatter.date}</Date>
     </Info>
     <ImageWrapper>
-      <Image url={frontmatter.thumbnail} />
+      {/* <Spring from={{ width: '0%' }} to={{ width: '100%' }} delay={200}>
+        {props => <ImageLoading style={props} />}
+      </Spring> */}
+      <Spring from={{ opacity: 0 }} to={{ opacity: 1 }} delay={500}>
+        {props => <Image url={frontmatter.thumbnail} style={props} />}
+      </Spring>
     </ImageWrapper>
     <Header>
       <Title>{frontmatter.title}</Title>
