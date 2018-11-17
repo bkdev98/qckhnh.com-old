@@ -15,5 +15,5 @@ pages:
       - public
   only:
     - master
-  tag:
+  tags:
     - shared
