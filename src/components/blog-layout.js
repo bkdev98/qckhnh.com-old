@@ -1,20 +1,17 @@
 import React, { Component } from 'react';
 import Helmet from 'react-helmet';
-import { graphql } from 'gatsby';
+import { graphql, Link } from 'gatsby';
 import styled from 'styled-components';
 import ReactRevealText from 'react-reveal-text';
 import { Spring, Transition } from 'react-spring';
 
 import Layout from './layout';
+import { media } from '../utils/media';
 
 const Wrapper = styled.div`
-  transform: translate(-50%, calc(-50% + 30px));
-  top: 50%;
-  width: 800px;
-  height: 435px;
-  left: 50%;
-  display: block !important;
-  position: absolute;
+  max-width: 800px;
+  margin: 0px auto;
+  position: relative;
   ::selection {
     background-color: #3c3c3e;
     color: #FFF;
@@ -22,11 +19,16 @@ const Wrapper = styled.div`
 `;
 
 const BlogInfo = styled.div`
-  margin-left: 95px;
   z-index: 21;
-  position: absolute;
-  top: -46px;
   letter-spacing: 3px;
+  margin-top: 200px;
+  margin-bottom: 15px;
+  ${media.tablet`
+    margin-top: 150px;
+  `};
+  ${media.phablet`
+    margin-top: 120px;
+  `};
 `;
 
 const Tag = styled.div`
@@ -36,6 +38,9 @@ const Tag = styled.div`
   display: inline-block;
   z-index: 12;
   text-transform: uppercase;
+  ${media.tablet`
+    margin-left: 20px;
+  `};
 `;
 
 const Seperator = styled.div`
@@ -52,50 +57,108 @@ const Date = styled.div`
 `;
 
 const Thumbnail = styled.div`
-  width: 800px;
-  height: 435px;
+  width: 100%;
+  height: ${props => props.percent * 435}px;
   background-image: url(${props => props.url});
   background-position: center;
   background-size: cover;
+  ${media.tablet`
+    height: ${props => props.percent * 400}px;
+    width: 100%;
+  `};
+  ${media.thone`
+    height: ${props => props.percent * 350}px;
+    width: 100%;
+  `};
+  ${media.phablet`
+    height: ${props => props.percent * 300}px;
+    width: 100%;
+  `};
 `;
 
 const TextWrapper = styled.div`
-  position: absolute;
-  z-index: 21;
-  top: 360px;
   width: 100%;
-  margin-bottom: 250px;
+  position: relative;
 `;
 
 const Title = styled(ReactRevealText)`
   padding: 0 100px;
-  position: relative;
-  min-height: 115px;
+  position: absolute;
+  top: -157px;
   color: #FB7EBB;
   font-weight: 900;
   z-index: 12;
   text-transform: uppercase;
-  position: relative;
   display: inline-block;
   font-size: 35px;
   letter-spacing: 16px;
   line-height: 50px;
+  ${media.tablet`
+    font-size: 30px;
+    padding: 0 50px;
+    letter-spacing: 14px;
+    top: -150px;
+    line-height: 45px;
+  `};
+  ${media.thone`
+    font-size: 28px;
+    padding: 0 20px;
+    letter-spacing: 10px;
+    top: -140px;
+    line-height: 40px;
+  `};
 `;
 
 const Content = styled.div`
-  margin-left: 100px;
-  margin-right: 100px;
+  margin: 50px 100px 50px;
   position: relative;
   font-size: 13px;
   letter-spacing: 2px;
   z-index: 21;
-  margin-bottom: 185px;
-  margin-top: 80px;
   color: #3c3c3e;
   font-weight: 300;
+  p {
+    margin-bottom: 10px;
+  }
   ::selection {
     background-color: #3c3c3e;
     color: #FFF;
+  }
+  ${media.tablet`
+    margin: 50px 30px;
+  `};
+  ${media.thone`
+    margin: 50px 20px;
+  `};
+`;
+
+const More = styled.div`
+  width: 100%;
+  position: relative;
+  margin: 100px 0px;
+  text-align: center;
+  a {
+    color: #3c3c3e;
+    z-index: 21;
+    font-size: 13px;
+    letter-spacing: 4px;
+    text-decoration: none;
+    text-align: center;
+    text-transform: uppercase;
+    font-weight: 900;
+    left: calc(50% + 3px);
+    width: 100%;
+    transform: translate(-50%, 0%);
+    transition: all -0.3s;
+    div {
+      position: absolute;
+      z-index: -1;
+      left: 50%;
+      transform: translate(-50%, 0%);
+      top: 15px;
+      height: 20px;
+      background-color: #FB7EBB;
+    }
   }
 `;
 
@@ -151,12 +214,12 @@ class BlogLayout extends Component {
             </Spring>
             <Transition
               items={transition}
-              from={{ height: 0 }}
-              enter={{ height: 435 }}
-              leave={{ height: 0 }}
+              from={{ percent: 0 }}
+              enter={{ percent: 1 }}
+              leave={{ percent: 0 }}
               trail={200}
             >
-              {transition => transition && (props => <Thumbnail url={article.frontmatter.thumbnail} style={props} />)}
+              {transition => transition && (props => <Thumbnail url={article.frontmatter.thumbnail} {...props} />)}
             </Transition>
             <TextWrapper>
               <Title show={revealTitle}>{article.frontmatter.title}</Title>
@@ -169,6 +232,19 @@ class BlogLayout extends Component {
                   <Content dangerouslySetInnerHTML={{ __html: article.html }} style={props} />
                 )}
               </Spring>
+              <More>
+                <Link to='/blog'>
+                  Quay lại blog
+                  <Spring
+                    from={{ width: 0 }}
+                    to={{ width: 200 }}
+                  >
+                    {props => (
+                      <div style={props} />
+                    )}
+                  </Spring>
+                </Link>
+              </More>
             </TextWrapper>
           </Wrapper>
         </Layout>

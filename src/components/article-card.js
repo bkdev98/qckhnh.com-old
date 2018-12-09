@@ -1,9 +1,10 @@
 /* eslint-disable no-nested-ternary */
 
-import React from 'react';
+import React, { Component } from 'react';
 import styled from 'styled-components';
 import { Link } from 'gatsby';
 import { Spring } from 'react-spring';
+import ReactRevealText from 'react-reveal-text';
 
 const Article = styled(Link)`
   display: block;
@@ -97,7 +98,7 @@ const Header = styled.div`
   min-height: 51px;
 `;
 
-const Title = styled.div`
+const Title = styled(ReactRevealText)`
   color: #FB7EBB;
   font-weight: 700;
   font-size: 20px;
@@ -169,42 +170,57 @@ const ReadMore = styled.div`
   }
 `;
 
-const ArticleCard = ({ data: { frontmatter, fields } }) => (
-  <Article to={fields.slug}>
-    <HoverWrapper>
-      <ImageWrapper hover>
-        <Spring from={{ opacity: 0 }} to={{ opacity: 1 }} delay={500}>
-          {props => <Image hover url={frontmatter.thumbnail} style={props} />}
+class ArticleCard extends Component {
+  state = { isReveal: false }
+
+  componentDidMount() {
+    setTimeout(() => this.setState({ isReveal: true }), 1000);
+  }
+
+  render() {
+    const { data: { frontmatter, fields } } = this.props;
+    const { isReveal } = this.state;
+    return (
+      <Article to={fields.slug}>
+        <HoverWrapper>
+          <ImageWrapper hover>
+            <Spring from={{ opacity: 0 }} to={{ opacity: 1 }}>
+              {props => <Image hover url={frontmatter.thumbnail} style={props} />}
+            </Spring>
+          </ImageWrapper>
+          <HoverLine top />
+          <HoverLine right />
+          <HoverLine bottom />
+          <HoverLine left />
+        </HoverWrapper>
+        <Info>
+          <Tag>{frontmatter.tag}</Tag>
+          <Seperator>|</Seperator>
+          <Date>{frontmatter.date}</Date>
+        </Info>
+        <ImageWrapper>
+          {/* <Spring from={{ width: '0%' }} to={{ width: '100%' }} delay={200}>
+            {props => <ImageLoading style={props} />}
+          </Spring> */}
+          <Spring from={{ opacity: 0 }} to={{ opacity: 1 }}>
+            {props => <Image url={frontmatter.thumbnail} style={props} />}
+          </Spring>
+        </ImageWrapper>
+        <Header>
+          <Title show={isReveal}>{frontmatter.title}</Title>
+        </Header>
+        <Spring from={{ opacity: 0 }} to={{ opacity: 1 }} delay={100}>
+          {props => (<Description style={props}>
+            {frontmatter.description}
+          </Description>)}
         </Spring>
-      </ImageWrapper>
-      <HoverLine top />
-      <HoverLine right />
-      <HoverLine bottom />
-      <HoverLine left />
-    </HoverWrapper>
-    <Info>
-      <Tag>{frontmatter.tag}</Tag>
-      <Seperator>|</Seperator>
-      <Date>{frontmatter.date}</Date>
-    </Info>
-    <ImageWrapper>
-      {/* <Spring from={{ width: '0%' }} to={{ width: '100%' }} delay={200}>
-        {props => <ImageLoading style={props} />}
-      </Spring> */}
-      <Spring from={{ opacity: 0 }} to={{ opacity: 1 }} delay={500}>
-        {props => <Image url={frontmatter.thumbnail} style={props} />}
-      </Spring>
-    </ImageWrapper>
-    <Header>
-      <Title>{frontmatter.title}</Title>
-    </Header>
-    <Description>
-      {frontmatter.description}
-    </Description>
-    <ReadMore>
-        Read More
-    </ReadMore>
-  </Article>
-);
+        <ReadMore>
+            Read More
+        </ReadMore>
+      </Article>
+    );
+  }
+}
 
 export default ArticleCard;
+

@@ -66,7 +66,7 @@ const Hamburger = styled.div`
   border: 0;
   background-color: white;
   display: none;
-  ${media.desktop`display: flex;`};
+  ${media.tablet`display: flex;`};
 `;
 
 const HamburgerBox = styled.div`
@@ -137,7 +137,7 @@ const HamburgerInner = styled.div`
 const NavLinks = styled.div`
   display: flex;
   align-items: center;
-  ${media.desktop`display: none;`};
+  ${media.tablet`display: none;`};
 `;
 
 const NavList = styled.ol`

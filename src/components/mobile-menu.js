@@ -18,7 +18,7 @@ const MenuContainer = styled.div`
   transform: translateX(${props => (props.menuOpen ? 0 : 100)}vw);
   visibility: ${props => (props.menuOpen ? 'visible' : 'hidden')};
   display: none;
-  ${media.tablet`display: block;`};
+  ${media.desktop`display: block;`};
 `;
 
 const Sidebar = styled.div`
