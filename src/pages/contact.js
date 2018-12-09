@@ -70,7 +70,7 @@ const Contact = () => (
     <Wrapper>
       <ul>
         <li>Quoc Khanh</li>
-        <li>HCMc, Vietnam</li>
+        <li>HCMC, Vietnam</li>
         <li>+84 949 840 370</li>
       </ul>
       <Text>Hi QcKhnh, I have a project, a budget and a detailed briefing!</Text>
