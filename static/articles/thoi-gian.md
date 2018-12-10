@@ -5,7 +5,7 @@ description: >-
   lạc...
 tag: General
 thumbnail: /assets/about-time.jpg
-date: 07-02-2018
+date: 02-07-2018
 ---
 Mấy hôm nay sửa soạn blog mới, lục lọi lại những tâm tư cũ, phần nhiều đã thất lạc, nhưng những dòng cảm xúc mà tôi từng trân trọng nhất thì vẫn còn vẹn nguyên đó. Rồi lọc lại xem cái nào nên đăng, cái nào nên giữ cho riêng mình. Những năm tháng thời học sinh, rồi những ngày đầu ở Sài Gòn, làm những công việc mới, gặp những người bạn mới,…
 

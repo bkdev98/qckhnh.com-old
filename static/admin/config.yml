@@ -17,4 +17,4 @@ collections:
       - { name: tag, label: Thẻ bài viết, widget: string}
       - { name: thumbnail, label: Ảnh bìa, widget: image }
       - { name: body, label: Nội dung, widget: markdown }
-      - { name: date, label: Ngày đăng, widget: date, format: DD-MM-YYYY }
+      - { name: date, label: Ngày đăng, widget: date, format: MM-DD-YYYY }

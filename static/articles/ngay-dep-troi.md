@@ -3,7 +3,7 @@ title: Ngày đẹp trời
 description: "\bĐọc những điều linh tinh, nhìn những thứ lãng mạn, nghĩ những điều vụn vặt."
 tag: General
 thumbnail: /assets/beauty-day.jpg
-date: 26-06-2018
+date: 06-26-2018
 ---
 Tôi thích những ngày một mình, đi dạo trên đường, đôi khi lại nằm dài ra ghế, đọc những điều linh tinh, nhìn những thứ lãng mạn, nghĩ những điều vụn vặt.
 

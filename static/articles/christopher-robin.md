@@ -5,7 +5,7 @@ description: >-
   sẽ biến mất.
 tag: Movies
 thumbnail: /assets/christopher-robin.png
-date: 11-08-2018
+date: 08-11-2018
 ---
 Từ rạp chiếu phim về, tôi đang loay hoay với việc viết gì đó với những cảm xúc này, cái cảm xúc thật đặc biệt mà tôi chưa từng tìm thấy trong một bộ phim rạp nào khác. Mẹ tôi gọi, lâu rồi mới nhận được cú điện thoại của ai đó từ gia đình. Mẹ dặn tôi đừng thức khuya quá, đừng ngồi mãi một chỗ, nhớ ăn uống điều độ. Mẹ còn dặn nhiều thứ khác, có những thứ mà suýt nữa thì tôi đã quên mất chúng từng là thói quen của mình.
 
