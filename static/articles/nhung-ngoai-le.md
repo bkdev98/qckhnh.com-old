@@ -1,5 +1,5 @@
 ---
-title: "\x1DNhững ngoại lệ"
+title: "Những ngoại lệ"
 description: >-
   Mình chưa bao giờ nói sẽ đo đếm tình cảm dành cho người khác, nhưng vẫn luôn
   phân biệt, ai quan trọng, ai là ai.
