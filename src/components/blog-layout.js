@@ -181,64 +181,62 @@ class BlogLayout extends Component {
     const { revealTitle, transition } = this.state;
 
     return (
-      <>
+      <Layout>
         <SEO
           title={article.frontmatter.title}
           description={article.frontmatter.description}
           thumbnail={article.frontmatter.thumbnail}
         />
-        <Layout>
-          <Wrapper>
+        <Wrapper>
+          <Spring
+            from={{ opacity: 0, transform: 'matrix(1, 0, 0, 1, 0, -40)' }}
+            to={{ opacity: 1, transform: 'matrix(1, 0, 0, 1, 0, 0)' }}
+            delay={200}
+          >
+            {props => (
+              <BlogInfo style={props}>
+                <Tag>{article.frontmatter.tag}</Tag>
+                <Seperator> |</Seperator>
+                <Date>{article.frontmatter.date}</Date>
+              </BlogInfo>
+            )}
+          </Spring>
+          <Transition
+            items={transition}
+            from={{ percent: 0 }}
+            enter={{ percent: 1 }}
+            leave={{ percent: 0 }}
+            trail={200}
+          >
+            {transition => transition && (props => <Thumbnail url={article.frontmatter.thumbnail} {...props} />)}
+          </Transition>
+          <TextWrapper>
+            <Title show={revealTitle}>{article.frontmatter.title}</Title>
             <Spring
-              from={{ opacity: 0, transform: 'matrix(1, 0, 0, 1, 0, -40)' }}
-              to={{ opacity: 1, transform: 'matrix(1, 0, 0, 1, 0, 0)' }}
-              delay={200}
+              from={{ opacity: 0, marginTop: 120 }}
+              to={{ opacity: 1, marginTop: 80 }}
+              delay={400}
             >
               {props => (
-                <BlogInfo style={props}>
-                  <Tag>{article.frontmatter.tag}</Tag>
-                  <Seperator> |</Seperator>
-                  <Date>{article.frontmatter.date}</Date>
-                </BlogInfo>
+                <Content dangerouslySetInnerHTML={{ __html: article.html }} style={props} />
               )}
             </Spring>
-            <Transition
-              items={transition}
-              from={{ percent: 0 }}
-              enter={{ percent: 1 }}
-              leave={{ percent: 0 }}
-              trail={200}
-            >
-              {transition => transition && (props => <Thumbnail url={article.frontmatter.thumbnail} {...props} />)}
-            </Transition>
-            <TextWrapper>
-              <Title show={revealTitle}>{article.frontmatter.title}</Title>
-              <Spring
-                from={{ opacity: 0, marginTop: 120 }}
-                to={{ opacity: 1, marginTop: 80 }}
-                delay={400}
-              >
-                {props => (
-                  <Content dangerouslySetInnerHTML={{ __html: article.html }} style={props} />
-                )}
-              </Spring>
-              <More>
-                <Link to='/blog'>
+            <More>
+              <Link to='/blog'>
                   Quay lại blog
-                  <Spring
-                    from={{ width: 0 }}
-                    to={{ width: 200 }}
-                  >
-                    {props => (
-                      <div style={props} />
-                    )}
-                  </Spring>
-                </Link>
-              </More>
-            </TextWrapper>
-          </Wrapper>
-        </Layout>
-      </>
+                <Spring
+                  from={{ width: 0 }}
+                  to={{ width: 200 }}
+                >
+                  {props => (
+                    <div style={props} />
+                  )}
+                </Spring>
+              </Link>
+            </More>
+          </TextWrapper>
+        </Wrapper>
+      </Layout>
     );
   }
 }
