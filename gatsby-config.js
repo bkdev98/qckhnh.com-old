@@ -1,6 +1,8 @@
 module.exports = {
   siteMetadata: {
-    title: 'qckhnh.com | Quoc Khanh',
+    title: 'Quoc Khanh',
+    description: 'Hi, my name is Quoc Khanh. I build software and blogging.',
+    author: '@qckhnh',
   },
   plugins: [
     'gatsby-plugin-react-helmet',
@@ -41,8 +43,5 @@ module.exports = {
       },
     },
     'gatsby-plugin-netlify-cms',
-    // this (optional) plugin enables Progressive Web App + Offline functionality
-    // To learn more, visit: https://gatsby.app/offline
-    // 'gatsby-plugin-offline',
   ],
 };

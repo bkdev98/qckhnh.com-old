@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import Helmet from 'react-helmet';
 import { graphql, Link } from 'gatsby';
 import styled from 'styled-components';
 import ReactRevealText from 'react-reveal-text';
@@ -7,6 +6,7 @@ import { Spring, Transition } from 'react-spring';
 
 import Layout from './layout';
 import { media } from '../utils/media';
+import SEO from './seo';
 
 const Wrapper = styled.div`
   max-width: 800px;
@@ -182,21 +182,11 @@ class BlogLayout extends Component {
 
     return (
       <>
-        <Helmet
+        <SEO
           title={article.frontmatter.title}
-          meta={[
-            { name: 'description', content: article.frontmatter.description },
-            { name: 'image', content: article.frontmatter.thumbnail },
-            { name: 'keywords', content: 'qckhnh' },
-            { name: 'og:title', content: `${article.frontmatter.title} | qckhnh.com` },
-            { name: 'og:url', content: `https://qckhnh.com${article.slug}` },
-            { name: 'og:type', content: 'website' },
-            { name: 'og:description', content: article.frontmatter.description },
-            { name: 'og:image', content: article.frontmatter.thumbnail },
-          ]}
-        >
-          <html lang="en" />
-        </Helmet>
+          description={article.frontmatter.description}
+          thumbnail={article.frontmatter.thumbnail}
+        />
         <Layout>
           <Wrapper>
             <Spring
