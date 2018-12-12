@@ -17,8 +17,7 @@ const MenuContainer = styled.div`
   transition: 'all 0.25s cubic-bezier(0.645, 0.045, 0.355, 1)';
   transform: translateX(${props => (props.menuOpen ? 0 : 100)}vw);
   visibility: ${props => (props.menuOpen ? 'visible' : 'hidden')};
-  display: none;
-  ${media.desktop`display: block;`};
+  display: block;
 `;
 
 const Sidebar = styled.div`
