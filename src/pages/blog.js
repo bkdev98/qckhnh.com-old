@@ -5,6 +5,7 @@ import styled from 'styled-components';
 
 import ArticleCard from '../components/article-card';
 import Layout from '../components/layout';
+import SEO from '../components/seo';
 
 const Wrapper = styled.div`
   max-width: 1250px;
@@ -23,6 +24,7 @@ const getMarginTop = idx => {
 
 const Blog = ({ data: { articles } }) => (
   <Layout>
+    <SEO title='Blog' />
     <Wrapper>
       <Grid fluid>
         <Row>

@@ -26,6 +26,7 @@
     "react-icons": "^3.2.2",
     "react-reveal-text": "^0.1.1",
     "react-spring": "^6.1.8",
+    "react-typist": "^2.0.4",
     "styled-components": "^4.0.3"
   },
   "keywords": [

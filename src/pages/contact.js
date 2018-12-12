@@ -1,8 +1,11 @@
 import React from 'react';
 import styled from 'styled-components';
+import Typist from 'react-typist';
+import 'react-typist/dist/Typist.css';
 
 import Section from '../components/section';
 import Layout from '../components/layout';
+import SEO from '../components/seo';
 import { media } from '../utils/media';
 
 const Wrapper = styled(Section)`
@@ -67,13 +70,16 @@ const More = styled.div`
 
 const Contact = () => (
   <Layout>
+    <SEO title='Contact' />
     <Wrapper>
       <ul>
         <li>Quoc Khanh</li>
         <li>HCMC, Vietnam</li>
         <li>+84 949 840 370</li>
       </ul>
-      <Text>Hi QcKhnh, I have a project, a budget and a detailed briefing!</Text>
+      <Text>
+        <Typist avgTypingDelay={40}>Hi QcKhnh, I have a project, a budget and a detailed briefing!</Typist>
+      </Text>
       <More>
         <a href='mailto:khanhbq@innoteq.vn'>
           Send an email
