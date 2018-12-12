@@ -13,4 +13,4 @@ Tôi không thể nhìn thấy mình đang ngồi nghe Frank Sinatra hát Blue M
 
 Đêm Sài Gòn cuối năm, chỉ muốn nán lại để nghe về sự dễ chịu, chia tay hay yêu đương đều cần phải dễ chịu, ít nhất là như vậy.
 
-> Blue moon you saw me standing alone, without a dream in my heart, without a love of my own
+> Blue moon you saw me standing alone, without a dream in my heart, without a love of my own.
