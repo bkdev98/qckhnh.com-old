@@ -438,11 +438,12 @@ blockquote {
   position:relative;
 }
 blockquote::before {
-  color: #ccc;
+  color: #FB7EBB;
   content: "\201C";
   font-size: 5em;
   position:absolute;
   top: 0.3em;
+  left: -5px;
   line-height: 0.1em;
 }
 form {
