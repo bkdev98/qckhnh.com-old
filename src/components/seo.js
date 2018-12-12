@@ -12,7 +12,7 @@ function SEO({ description, lang, meta, keywords, title, thumbnail }) {
       render={data => {
         const metaDescription =
           description || data.site.siteMetadata.description;
-        const metaThumbnail = defaultThumbnail || thumbnail;
+        const metaThumbnail = thumbnail || defaultThumbnail;
         return (
           <Helmet
             htmlAttributes={{
