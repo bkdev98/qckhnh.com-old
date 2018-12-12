@@ -442,7 +442,6 @@ blockquote::before {
   content: "\201C";
   font-size: 5em;
   position:absolute;
-  left:5px;
   top: 0.3em;
   line-height: 0.1em;
 }
