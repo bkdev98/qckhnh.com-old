@@ -20,7 +20,7 @@ const Wrapper = styled.div`
 
 const Layout = ({ children }) => (
   <>
-    <SEO />
+    <SEO title='Home' />
     <Header />
     <Wrapper>
       {children}
