@@ -15,7 +15,7 @@ Nhưng tôi đã sai, không phải về chuyện sẽ xảy đến, rằng mọ
 
 Tôi xem _Call me by your name_ tối hôm qua, không phải là một bộ phim mà tôi sẽ xem lại vào một ngày khác, nhưng đoạn hội thoại cuối phim khiến nó trở nên ám ảnh và đặc biệt.
 
-> We rip out so much of ourselves to be cured of things faster than we should that we go bankrupt by the age of 30 and have less to offer each time we start with someone new. But to feel nothing so as not to feel anything—what a waste!
+> We rip out so much of ourselves to be cured of things faster than we should that we go bankrupt by the age of 30 and have less to offer each time we start with someone new. But to feel nothing so as not to feel anything, what a waste!
 
 Tôi ngồi dậy, tự nhắc mình về những gì mà tôi có. Tôi vẫn còn một số ít những người bạn khiến tôi thấy bình yên khi ở bên. Tôi sẽ gọi cho họ, và nếu họ không bận, chúng tôi có thể đi chơi, làm vài cốc bia, hay đi xem phim, cà phê, chuyện trò. Nếu họ bận, tôi vẫn còn đây cái máy tính của mình, với những ý tưởng còn chưa thành hiện thực. Vậy là tôi code. Tôi nhìn ra ngoài đường qua ô cửa sổ, Sài Gòn về đêm, ấm áp và dịu dàng, tôi đang sống hết tuổi trẻ của mình. Rồi tôi trở lại với những dòng code, và cứ mỗi phút giây cơn đau lại giảm đi một ít, trước khi hoàn toàn tan biến.
 
