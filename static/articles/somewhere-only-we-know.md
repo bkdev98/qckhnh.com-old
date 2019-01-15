@@ -3,7 +3,7 @@ title: Somewhere Only We Know
 description: 'Nghĩ về mình ở góc nhìn thứ ba: Hắn ta là ai? Bí mật của hắn là gì?'
 tag: General
 thumbnail: /assets/somewhere-only-we-know.jpg
-date: 08-22-2018
+date: 2018-08-22
 ---
 Chiều tôi bật một bản nhạc nhẹ nhàng đã lâu không nghe, tự cho phép mình hoàn tất công việc và tắt máy tính. Rồi ngồi trên ghế, nhâm nhi tách trà tự pha trong yên lặng.
 

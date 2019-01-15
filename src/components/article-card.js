@@ -184,40 +184,29 @@ class ArticleCard extends Component {
       <Article to={fields.slug}>
         <HoverWrapper>
           <ImageWrapper hover>
-            <Spring from={{ opacity: 0 }} to={{ opacity: 1 }}>
-              {props => <Image hover url={frontmatter.thumbnail} style={props} />}
-            </Spring>
+            <Image hover url={frontmatter.thumbnail} />
           </ImageWrapper>
           <HoverLine top />
           <HoverLine right />
           <HoverLine bottom />
           <HoverLine left />
         </HoverWrapper>
-        <Spring from={{ opacity: 0 }} to={{ opacity: 1 }} delay={1300}>
-          {props => (<Info style={props}>
+          <Info>
             <Tag>{frontmatter.tag}</Tag>
             <Seperator>|</Seperator>
             <Date>{frontmatter.date}</Date>
-          </Info>)}
-        </Spring>
+          </Info>
         <ImageWrapper>
-          {/* <Spring from={{ width: '0%' }} to={{ width: '100%' }} delay={200}>
-            {props => <ImageLoading style={props} />}
-          </Spring> */}
-          <Spring from={{ opacity: 0 }} to={{ opacity: 1 }}>
-            {props => <Image url={frontmatter.thumbnail} style={props} />}
-          </Spring>
+          <Image url={frontmatter.thumbnail} />
         </ImageWrapper>
         <Header>
           <Title show={isReveal}>{frontmatter.title}</Title>
         </Header>
-        <Spring from={{ opacity: 0 }} to={{ opacity: 1 }} delay={1300}>
-          {props => (<Description style={props}>
+          <Description>
             {frontmatter.description}
-          </Description>)}
-        </Spring>
+          </Description>
         <ReadMore>
-            Read More
+          Read More
         </ReadMore>
       </Article>
     );

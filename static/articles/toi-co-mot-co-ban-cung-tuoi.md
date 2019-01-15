@@ -5,7 +5,7 @@ description: >-
   định cứ tận hưởng chầm chậm nó.
 tag: General
 thumbnail: /assets/lost-in-translations.png
-date: 07-14-2018
+date: 2018-07-14
 ---
 Hai đứa thỉnh thoảng nói chuyện phiếm với nhau.
 

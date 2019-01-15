@@ -41,8 +41,6 @@
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "devDependencies": {
-    "eslint": "^5.9.0",
-    "eslint-config-equimper": "^2.2.2",
     "prettier": "^1.14.2"
   },
   "repository": {

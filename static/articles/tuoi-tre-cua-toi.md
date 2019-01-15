@@ -3,7 +3,7 @@ title: Tuổi trẻ của tôi
 description: Tuổi trẻ như thế này thì có được không?
 tag: general
 thumbnail: /assets/tuoi-tre-cua-toi.png
-date: 01-09-2019
+date: 2019-01-09
 ---
 Gần 1h sáng bạn gọi cho tôi, nói rằng muốn trò chuyện một lúc. Tôi đang ngồi trong một quán cà phê, đóng quyển sách lại và bật máy tính. Chúng tôi nhắn tin qua facebook. Hiện tại tôi rất hạn chế nói chuyện bằng facebook, nhưng lại chẳng thể gặp nhau vào lúc này. Qua rồi những ngày tôi có thể thoải mái đến gặp những người bạn, khi họ cần, vào bất kỳ lúc nào. Vài năm trước hồi trung học, đó là sự lãng mạn. Còn bây giờ ngay lúc này, đó là một chút kỳ cục, chưa kể bạn đã có người yêu. Cũng có thể chỉ do tôi nghĩ như vậy.
 

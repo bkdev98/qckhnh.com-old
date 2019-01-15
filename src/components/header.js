@@ -237,7 +237,7 @@ class Header extends Component {
   handleResize = () => {
     const { menuOpen } = this.state;
 
-    if (window.innerWidth > 768 && menuOpen) {
+    if (window.innerWidth > 840 && menuOpen) {
       this.toggleMenu();
     }
   }
@@ -254,7 +254,7 @@ class Header extends Component {
     }
   }
 
-  toggleMenu = () => this.setState({ menuOpen: !this.state.menuOpen });
+  toggleMenu = () => this.setState(state => ({ menuOpen: !state.menuOpen }));
 
   handleMenuClick = e => {
     const target = e.target;

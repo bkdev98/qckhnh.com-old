@@ -3,7 +3,7 @@ title: Chuyện cũ Hà Nội
 description: "Đ\x1Dến ngày cuối cùng rồi nhưng vẫn còn ôm ấp những thứ lạ lẫm này chẳng muốn chia sẻ với ai."
 tag: general
 thumbnail: /assets/chuyen-cu-ha-noi.png
-date: 10-08-2018
+date: 2018-10-08
 ---
 Dịp ra Bắc đầu tiên, xem nhiều, nghe nhiều, nghĩ nhiều, mà lại chẳng muốn viết nhiều. Chợt nghĩ lại, đến ngày cuối cùng rồi nhưng vẫn còn ôm ấp những thứ lạ lẫm này chẳng muốn chia sẻ với ai…
 

@@ -10,12 +10,10 @@ const MenuContainer = styled.div`
   top: 0;
   bottom: 0;
   right: 0;
-  width: 100%;
+  width: 100vw;
   height: 100vh;
   z-index: 10;
   outline: 0;
-  transition: 'all 0.25s cubic-bezier(0.645, 0.045, 0.355, 1)';
-  transform: translateX(${props => (props.menuOpen ? 0 : 100)}vw);
   visibility: ${props => (props.menuOpen ? 'visible' : 'hidden')};
   display: block;
 `;

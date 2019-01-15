@@ -5,7 +5,7 @@ description: >-
   phân biệt, ai quan trọng, ai là ai.
 tag: general
 thumbnail: /assets/nhung-ngoai-le.png
-date: 12-12-2018
+date: 2018-12-12
 ---
 Mình chưa bao giờ nói sẽ đo đếm tình cảm dành cho người khác, nhưng vẫn luôn phân biệt, ai quan trọng, ai là ai.
 

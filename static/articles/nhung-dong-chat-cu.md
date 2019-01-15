@@ -3,7 +3,7 @@ title: Những dòng chat cũ
 description: Tôi là kiểu người thích nói chuyện bằng chữ chứ không phải bằng lời.
 tag: general
 thumbnail: /assets/nhung-dong-chat-cu.png
-date: 10-21-2018
+date: 2018-10-21
 ---
 Tôi là kiểu người thích nói chuyện bằng chữ chứ không phải bằng lời.
 

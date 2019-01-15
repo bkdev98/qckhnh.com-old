@@ -55,7 +55,7 @@ export const pageQuery = graphql`
             description
             tag
             thumbnail
-            date
+            date(formatString: "DD-MM-YYYY")
           }
           html
           fields {

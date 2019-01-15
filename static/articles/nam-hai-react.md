@@ -3,7 +3,7 @@ title: Năm hai React
 description: React là một sự đầu tư xứng đáng.
 tag: Coding
 thumbnail: /assets/react-year-two.jpeg
-date: 07-11-2018
+date: 2018-07-11
 ---
 Bắt đầu một công nghệ mới có thể khá rắc rối. Bạn sẽ tìm thấy mình trong một đại dương mênh mông các hướng dẫn, bài viết, cùng hàng triệu những ý kiến cá nhân. Và ai nấy cũng đặt tiêu đề rằng họ đã tìm thấy “cách đúng đắn nhất“.
 

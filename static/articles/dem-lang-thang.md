@@ -3,7 +3,7 @@ title: Đêm lang thang
 description: "Đêm Sài Gòn cuối năm, chỉ muốn nán lại để \x1Dnghe về sự dễ chịu, chia tay hay yêu đương đều cần phải dễ chịu, ít nhất là như vậy."
 tag: general
 thumbnail: /assets/dem-lang-thang.png
-date: 12-02-2018
+date: 2018-12-02
 ---
 Tôi dừng lại ở một cửa hàng bán CD cũ ở quận 3. Tôi không quá rành về âm nhạc, nhưng tôi biết âm nhạc có thể làm được gì. Âm nhạc xua đuổi sự ồn ào? Hơn cả thế, âm nhạc chính là cái cớ để cái tôi phóng đại một cách không thể kiểm soát được.
 

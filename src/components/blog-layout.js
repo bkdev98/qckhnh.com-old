@@ -112,7 +112,7 @@ const Title = styled(ReactRevealText)`
 const Content = styled.div`
   margin: 50px 100px 50px;
   position: relative;
-  font-size: 13px;
+  font-size: 13.5px;
   letter-spacing: 2px;
   z-index: 21;
   color: #3c3c3e;
@@ -252,7 +252,7 @@ export const query = graphql`
         description
         tag
         thumbnail
-        date
+        date(formatString: "MMMM DD, YYYY")
       }
     }
   }
