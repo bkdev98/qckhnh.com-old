@@ -623,3 +623,9 @@ pre tt:after {
     font-size: 100%;
   }
 }
+
+.rc-slider-handle:active,
+.rc-slider-handle:hover,
+.rc-slider-handle:focus {
+  box-shadow: none !important;
+}

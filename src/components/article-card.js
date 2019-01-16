@@ -50,7 +50,7 @@ const ImageWrapper = styled.div`
   height: 160px;
   width: 300px;
   position: relative;
-  z-index: -1;
+  z-index: 0;
   margin-top: ${props => (props.hover ? '84px' : 0)};
   margin-left: ${props => (props.hover ? '50px' : 0)};
   transform: matrix(1, 0, 0, 1, 0, 0);
@@ -63,11 +63,10 @@ const ImageWrapper = styled.div`
 `;
 
 const Image = styled.div`
-  position: absolute;
   width: 100%;
   height: 100%;
   background-image: url(${props => props.url});
-  z-index: 0;
+  z-index: 1;
   background-color: #3c3c3e;
   background-blend-mode: screen;
   background-position: center;
@@ -182,6 +181,14 @@ class ArticleCard extends Component {
     const { isReveal } = this.state;
     return (
       <Article to={fields.slug}>
+        <Info>
+          <Tag>{frontmatter.tag}</Tag>
+          <Seperator>|</Seperator>
+          <Date>{frontmatter.date}</Date>
+        </Info>
+        <ImageWrapper>
+          <Image url={frontmatter.thumbnail} />
+        </ImageWrapper>
         <HoverWrapper>
           <ImageWrapper hover>
             <Image hover url={frontmatter.thumbnail} />
@@ -191,14 +198,6 @@ class ArticleCard extends Component {
           <HoverLine bottom />
           <HoverLine left />
         </HoverWrapper>
-          <Info>
-            <Tag>{frontmatter.tag}</Tag>
-            <Seperator>|</Seperator>
-            <Date>{frontmatter.date}</Date>
-          </Info>
-        <ImageWrapper>
-          <Image url={frontmatter.thumbnail} />
-        </ImageWrapper>
         <Header>
           <Title show={isReveal}>{frontmatter.title}</Title>
         </Header>

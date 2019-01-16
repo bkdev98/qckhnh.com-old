@@ -9,7 +9,7 @@ const Wrapper = styled.div`
   position: fixed;
   bottom: 0px;
   right: 40px;
-  color: #3C3C3E;
+  color: ${props => props.isDark ? '#FFF' : '#3C3C3E'};
   :hover {
     color: #FB7EBB;
   }
@@ -29,7 +29,7 @@ const Container = styled.div`
     display: block;
     width: 1px;
     height: 90px;
-    background-color: #3C3C3E;
+    background-color: ${props => props.isDark ? '#FFF' : '#3C3C3E'};
     margin: 0px auto;
   }
 `;
@@ -51,11 +51,11 @@ const Link = styled.a`
   transition: all 0.25s cubic-bezier(0.645, 0.045, 0.355, 1) 0s;
 `;
 
-const Social = () => (
+const Social = ({ settings }) => (
   <Spring from={{ opacity: 0, bottom: -20 }} to={{ opacity: 1, bottom: 0 }} delay={2500}>
     {styles => (
-      <Wrapper style={styles}>
-        <Container>
+      <Wrapper isDark={settings.theme === 'dark'} style={styles}>
+        <Container isDark={settings.theme === 'dark'}>
           <Link href='mailto:khanhbq@innoteq.vn'>khanhbq@innoteq.vn</Link>
         </Container>
       </Wrapper>

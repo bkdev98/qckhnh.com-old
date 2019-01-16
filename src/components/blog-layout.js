@@ -8,10 +8,14 @@ import Layout from './layout';
 import { media } from '../utils/media';
 import SEO from './seo';
 
+const STORAGE_KEY = 'qckhnh-settings';
+
 const Wrapper = styled.div`
   max-width: 800px;
   margin: 0px auto;
   position: relative;
+  color: ${props => props.settings.theme === 'dark' ? '#FFF' : '#3c3c3e'};
+  background-color: ${props => props.settings.theme === 'dark' ? '#3c3c3e' : '#FFF'};
   ::selection {
     background-color: #3c3c3e;
     color: #FFF;
@@ -32,7 +36,6 @@ const BlogInfo = styled.div`
 `;
 
 const Tag = styled.div`
-  color: #3c3c3e;
   font-size: 12px;
   font-weight: 900;
   display: inline-block;
@@ -51,7 +54,6 @@ const Seperator = styled.div`
 
 const Date = styled.div`
   z-index: 12;
-  color: #3c3c3e;
   display: inline-block;
   font-size: 12px;
 `;
@@ -112,10 +114,11 @@ const Title = styled(ReactRevealText)`
 const Content = styled.div`
   margin: 50px 100px 50px;
   position: relative;
-  font-size: 13.5px;
+  font-size: ${props => `${props.settings.fontSize}px`};
   letter-spacing: 2px;
+  line-height: ${props => props.settings.lineHeight};
   z-index: 21;
-  color: #3c3c3e;
+  font-family: ${props => `${props.settings.font}, 'Roboto Mono', monospace`};
   font-weight: 300;
   p {
     margin-bottom: 10px;
@@ -138,7 +141,7 @@ const More = styled.div`
   margin: 100px 0px;
   text-align: center;
   a {
-    color: #3c3c3e;
+    color: ${props => props.settings.theme === 'dark' ? '#FFF' : '#3c3c3e'};
     z-index: 21;
     font-size: 13px;
     letter-spacing: 4px;
@@ -150,9 +153,13 @@ const More = styled.div`
     width: 100%;
     transform: translate(-50%, 0%);
     transition: all -0.3s;
+    span {
+      z-index: 1;
+      position: relative;
+    }
     div {
       position: absolute;
-      z-index: -1;
+      z-index: 0;
       left: 50%;
       transform: translate(-50%, 0%);
       top: 15px;
@@ -162,13 +169,25 @@ const More = styled.div`
   }
 `;
 
+const DEFAULT_SETTINGS = {
+  theme: 'light',
+  font: 'Roboto Mono',
+  fontSize: 13.5,
+  lineHeight: 1.8,
+}
+
 class BlogLayout extends Component {
   state = {
     revealTitle: false,
     transition: true,
+    settings: DEFAULT_SETTINGS,
   }
 
   componentDidMount() {
+    const settings = localStorage.getItem(STORAGE_KEY);
+    if (settings) {
+      this.setState({ settings: JSON.parse(settings) })
+    }
     setTimeout(() => this.setState({ revealTitle: true }), 300);
   }
 
@@ -176,18 +195,25 @@ class BlogLayout extends Component {
     this.setState({ transition: false });
   }
 
+  handleChangeSetting = (type, value) =>
+    this.setState(
+      state => ({ settings: { ...state.settings, [type]: value } }),
+      () => localStorage.setItem(STORAGE_KEY, JSON.stringify(this.state.settings)));
+
+  handleResetSetting = () => this.setState({ settings: DEFAULT_SETTINGS }, () => localStorage.removeItem(STORAGE_KEY))
+
   render() {
     const { data: { markdownRemark: article } } = this.props;
-    const { revealTitle, transition } = this.state;
+    const { revealTitle, transition, settings } = this.state;
 
     return (
-      <Layout>
+      <Layout settings={settings} changeSetting={this.handleChangeSetting} resetSetting={this.handleResetSetting}>
         <SEO
           title={article.frontmatter.title}
           description={article.frontmatter.description}
           thumbnail={article.frontmatter.thumbnail}
         />
-        <Wrapper>
+        <Wrapper settings={settings}>
           <Spring
             from={{ opacity: 0, transform: 'matrix(1, 0, 0, 1, 0, -40)' }}
             to={{ opacity: 1, transform: 'matrix(1, 0, 0, 1, 0, 0)' }}
@@ -218,12 +244,11 @@ class BlogLayout extends Component {
               delay={400}
             >
               {props => (
-                <Content dangerouslySetInnerHTML={{ __html: article.html }} style={props} />
+                <Content settings={settings} dangerouslySetInnerHTML={{ __html: article.html }} style={props} />
               )}
             </Spring>
-            <More>
+            <More settings={settings}>
               <Link to='/blog'>
-                  Quay lại blog
                 <Spring
                   from={{ width: 0 }}
                   to={{ width: 200 }}
@@ -232,6 +257,7 @@ class BlogLayout extends Component {
                     <div style={props} />
                   )}
                 </Spring>
+                <span>Quay lại blog</span>
               </Link>
             </More>
           </TextWrapper>
@@ -252,7 +278,7 @@ export const query = graphql`
         description
         tag
         thumbnail
-        date(formatString: "MMMM DD, YYYY")
+        date(formatString: "DD-MM-YYYY")
       }
     }
   }

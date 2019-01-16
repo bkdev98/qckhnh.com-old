@@ -12,11 +12,10 @@ const FooterContainer = styled.footer`
   padding: 15px;
   text-align: center;
   height: auto;
-  color: #3C3C3E;
-  background: white;
+  color: ${props => props.isDark ? '#FFF' : '#3C3C3E'};
+  background: ${props => props.isDark ? '#000' : '#FFF'};
 `;
 const SocialContainer = styled.div`
-  color: #3C3C3E;
   width: 100%;
   max-width: 270px;
   margin: 10px auto;
@@ -28,13 +27,15 @@ const SocialItemList = styled.ul`
   justify-content: space-between;
   align-items: center;
   margin: 0px;
+  a {
+    color: ${props => props.isDark ? '#FFF' : '#3C3C3E'};
+  }
 `;
 const SocialItem = styled.li`
   margin: 0px;
 `;
 const SocialLink = styled.a`
   padding: 10px;
-  color: #3C3C3E;
   transition: all 0.2s;
   :hover {
     color: white;
@@ -58,10 +59,10 @@ const Copy = styled.p`
   `};
 `;
 
-const Footer = () => (
-  <FooterContainer>
+const Footer = ({ settings }) => (
+  <FooterContainer isDark={settings.theme === 'dark'}>
     <SocialContainer>
-      <SocialItemList>
+      <SocialItemList isDark={settings.theme === 'dark'}>
         <SocialItem>
           <SocialLink
             href='https://fb.com/bkdev98'

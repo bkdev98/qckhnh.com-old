@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { Link } from 'gatsby';
 import { Spring } from 'react-spring';
+import { FiSettings } from 'react-icons/fi';
 
 import styled from 'styled-components';
 import { media } from '../utils/media';
@@ -23,7 +24,7 @@ const Sidebar = styled.div`
   justify-content: center;
   align-items: flex-start;
   flex-direction: column;
-  background-color: white;
+  background-color: ${props => props.isDark ? '#3c3c3e' : '#FFF'};
   padding: 50px;
   width: 50vw;
   height: 100%;
@@ -41,13 +42,15 @@ const NavLinks = styled.nav`
   align-items: flex-start;
   flex-direction: column;
   text-align: center;
+  a {
+    color: ${props => props.isDark ? '#FFF' : '#3C3C3E'};
+  }
 `;
 
 const NavListItem = styled.li`
   margin: 10px 20px;
   position: relative;
   font-size: 14px;
-  color: white;
   list-style: none;
   counter-increment: item 1;
   &:before {
@@ -62,12 +65,32 @@ const NavLink = styled(Link)`
   padding: 3px 20px 20px;
   width: 100%;
   text-decoration: none;
-  color: #3C3C3E;
+`;
+const SettingWrapper = styled(NavListItem)`
+  margin-left: 23px;
+  &:before {
+    display: none;
+  }
+`;
+const Setting = styled.button`
+  outline: none;
+  border: none;
+  span {
+    margin-left: 20px;
+  }
+  cursor: pointer;
+  background-color: transparent;
+  font-size: 14px;
+  padding: 0px;
+  color: ${props => props.isDark ? '#FFF' : '#3C3C3E'};
+  :hover {
+    color: #FB7EBB;
+  }
 `;
 
 class Menu extends Component {
   render() {
-    const { menuOpen, handleMenuClick } = this.props;
+    const { menuOpen, handleMenuClick, settings, toggleSetting } = this.props;
 
     return (
       <MenuContainer
@@ -76,8 +99,8 @@ class Menu extends Component {
         aria-hidden={!menuOpen}
         tabIndex={menuOpen ? 1 : -1}
       >
-        <Sidebar>
-          <NavLinks>
+        <Sidebar isDark={settings.theme === 'dark'}>
+          <NavLinks isDark={settings.theme === 'dark'}>
             <Spring from={{ marginBottom: 10, opacity: 0 }} to={{ marginBottom: 0, opacity: 1 }} delay={300}>
               {styles => (
                 <NavListItem style={styles}>
@@ -106,6 +129,15 @@ class Menu extends Component {
                 </NavListItem>
               )}
             </Spring>
+            {settings.theme && <Spring from={{ marginBottom: 10, opacity: 0 }} to={{ marginBottom: 0, opacity: 1 }} delay={800}>
+              {styles => (
+                <SettingWrapper style={styles}>
+                  <Setting isDark={settings.theme === 'dark'} onClick={toggleSetting}>
+                    <FiSettings style={{ color: '#FB7EBB', marginTop: 4 }} /> <span>Settings</span>
+                  </Setting>
+                </SettingWrapper>
+              )}
+            </Spring>}
           </NavLinks>
         </Sidebar>
       </MenuContainer>

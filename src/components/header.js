@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import styled from 'styled-components';
 import { Spring } from 'react-spring';
 import { Link } from 'gatsby';
+import { FiSettings } from 'react-icons/fi';
 
 import { throttle } from '../utils/math';
 import { media } from '../utils/media';
@@ -17,7 +18,7 @@ const Wrapper = styled.div`
   position: fixed;
   top: 0px;
   z-index: 999;
-  background-color: white;
+  background-color: ${props => props.isDark ? '#000' : '#FFF'};
   overflow: hidden;
   width: 100%;
   height: ${props =>
@@ -64,7 +65,7 @@ const Hamburger = styled.div`
   text-transform: none;
   color: inherit;
   border: 0;
-  background-color: white;
+  background-color: ${props => props.isDark ? '#3c3c3e' : '#FFF'};
   display: none;
   ${media.tablet`display: flex;`};
 `;
@@ -147,6 +148,21 @@ const NavList = styled.ol`
   display: flex;
   justify-content: space-between;
   align-items: center;
+  color: ${props => props.isDark ? '#FFF' : '#3C3C3E'};
+`;
+
+const Setting = styled.button`
+  outline: none;
+  border: none;
+  cursor: pointer;
+  background-color: transparent;
+  font-size: 14px;
+  padding: 0px;
+  color: ${props => props.isDark ? '#FFF' : '#3C3C3E'};
+  margin-top: 3px;
+  :hover {
+    color: #FB7EBB;
+  }
 `;
 
 const NavListItem = styled.li`
@@ -155,7 +171,6 @@ const NavListItem = styled.li`
   margin: 0px 10px;
   letter-spacing: 2px;
   font-weight: 300;
-  color: #3C3C3E;
   counter-increment: item 1;
   :hover {
     color: #FB7EBB;
@@ -268,9 +283,10 @@ class Header extends Component {
 
   render() {
     const { scrollDirection, menuOpen } = this.state;
+    const { toggleSetting, settings } = this.props;
 
     return (
-      <Wrapper scrollDirection={scrollDirection}>
+      <Wrapper scrollDirection={scrollDirection} isDark={settings.theme === 'dark'}>
         <Nav>
           <Spring from={{ marginBottom: 10, opacity: 0 }} to={{ marginBottom: 0, opacity: 1 }}>
             {styles => (
@@ -280,14 +296,14 @@ class Header extends Component {
             )}
           </Spring>
 
-          <Hamburger onClick={this.toggleMenu}>
+          <Hamburger isDark={settings.theme === 'dark'} onClick={this.toggleMenu}>
             <HamburgerBox>
               <HamburgerInner menuOpen={menuOpen} />
             </HamburgerBox>
           </Hamburger>
 
           <NavLinks>
-            <NavList>
+            <NavList isDark={settings.theme === 'dark'}>
               <Spring from={{ marginBottom: 10, opacity: 0 }} to={{ marginBottom: 0, opacity: 1 }} delay={300}>
                 {styles => (
                   <NavListItem style={styles}>
@@ -316,12 +332,21 @@ class Header extends Component {
                   </NavListItem>
                 )}
               </Spring>
+              {settings.theme && <Spring from={{ marginBottom: 10, opacity: 0 }} to={{ marginBottom: 0, opacity: 1 }} delay={800}>
+                {styles => (
+                  <Setting isDark={settings.theme === 'dark'} style={styles} onClick={toggleSetting}>
+                    <FiSettings />
+                  </Setting>
+                )}
+              </Spring>}
             </NavList>
           </NavLinks>
         </Nav>
 
         <MobileMenu
           menuOpen={menuOpen}
+          settings={settings}
+          toggleSetting={toggleSetting}
           handleMenuClick={e => this.handleMenuClick(e)}
         />
       </Wrapper>
