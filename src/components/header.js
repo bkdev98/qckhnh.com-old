@@ -158,11 +158,8 @@ const Setting = styled.button`
   background-color: transparent;
   font-size: 14px;
   padding: 0px;
-  color: ${props => props.isDark ? '#FFF' : '#3C3C3E'};
+  color: #FB7EBB;
   margin-top: 3px;
-  :hover {
-    color: #FB7EBB;
-  }
 `;
 
 const NavListItem = styled.li`
