@@ -14,7 +14,6 @@ const MenuContainer = styled.div`
   width: 100vw;
   height: 100vh;
   outline: 0;
-  z-index: 11;
   display: ${props => (props.menuOpen ? 'block' : 'none')};
 `;
 

@@ -17,10 +17,10 @@ const Wrapper = styled.div`
   align-items: center;
   position: fixed;
   top: 0px;
-  z-index: 999;
   background-color: ${props => props.isDark ? '#000' : '#FFF'};
   overflow: hidden;
   width: 100%;
+  z-index: 99;
   height: ${props =>
     (props.scrollDirection === 'none' ? '100px' : '70px')};
   filter: none !important;
@@ -44,7 +44,7 @@ const Nav = styled.nav`
   width: 100%;
   counter-reset: item 0;
   position: relative;
-  z-index: 12;
+  z-index: 1;
 `;
 
 const Hamburger = styled.div`

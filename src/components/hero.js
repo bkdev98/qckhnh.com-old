@@ -134,7 +134,6 @@ const HoverWrapper = styled.div`
   display: block;
   position: absolute;
   top: -3vh;
-  z-index: 0;
   background-color: transparent;
   overflow: hidden;
   height: calc(100% + 6vh);
