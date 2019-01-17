@@ -23,11 +23,6 @@ const Wrapper = styled.div`
   width: 100%;
   height: ${props =>
     (props.scrollDirection === 'none' ? '100px' : '70px')};
-  /* box-shadow: ${props =>
-    (props.scrollDirection === 'up' ? '0 1px 2px rgba(60, 60, 62, 0.1)' : 'none')};
-  transform: translateY(
-    ${props => (props.scrollDirection === 'down' ? `-${'70px'}` : '0px')}
-  ); */
   filter: none !important;
   pointer-events: auto !important;
   user-select: auto !important;

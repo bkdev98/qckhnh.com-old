@@ -12,6 +12,7 @@ import SettingModal from './setting-modal';
 
 const Wrapper = styled.div`
   overflow: hidden;
+  z-index: 10;
   color: ${props => props.settings.theme === 'dark' ? '#FFF' : '#3c3c3e'};
   background-color: ${props => props.settings.theme === 'dark' ? '#3c3c3e' : '#FFF'};
   ::after {

@@ -13,8 +13,8 @@ const MenuContainer = styled.div`
   right: 0;
   width: 100vw;
   height: 100vh;
-  z-index: 10;
   outline: 0;
+  z-index: 11;
   display: ${props => (props.menuOpen ? 'block' : 'none')};
 `;
 
