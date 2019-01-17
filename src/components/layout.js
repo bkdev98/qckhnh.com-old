@@ -14,6 +14,7 @@ const Wrapper = styled.div`
   overflow: hidden;
   color: ${props => props.settings.theme === 'dark' ? '#FFF' : '#3c3c3e'};
   background-color: ${props => props.settings.theme === 'dark' ? '#3c3c3e' : '#FFF'};
+  z-index: -1;
   ::after {
     content: "";
     display: table;
