@@ -15,8 +15,7 @@ const MenuContainer = styled.div`
   height: 100vh;
   z-index: 10;
   outline: 0;
-  visibility: ${props => (props.menuOpen ? 'visible' : 'hidden')};
-  display: block;
+  display: ${props => (props.menuOpen ? 'block' : 'none')};
 `;
 
 const Sidebar = styled.div`
@@ -96,8 +95,6 @@ class Menu extends Component {
       <MenuContainer
         menuOpen={menuOpen}
         onClick={handleMenuClick}
-        aria-hidden={!menuOpen}
-        tabIndex={menuOpen ? 1 : -1}
       >
         <Sidebar isDark={settings.theme === 'dark'}>
           <NavLinks isDark={settings.theme === 'dark'}>
