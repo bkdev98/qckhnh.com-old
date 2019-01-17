@@ -106,7 +106,7 @@ const Footer = ({ settings }) => (
       </SocialItemList>
     </SocialContainer>
     <Copy>
-      Designed by <a>Quoc Khanh</a>
+      Designed by <a href='https://qckhnh.com'>Quoc Khanh</a>
     </Copy>
   </FooterContainer>
 );

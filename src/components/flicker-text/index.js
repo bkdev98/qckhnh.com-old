@@ -48,7 +48,7 @@ class FlickerText extends React.Component {
     }
   }
 
-  componentWillReceiveProps(nextProps) {
+  UNSAFE_componentWillReceiveProps(nextProps) {
     const { children } = this.props;
     if (nextProps.children !== children) {
       this.linesToType = extractTextFromElement(nextProps.children);

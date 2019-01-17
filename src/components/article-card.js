@@ -3,7 +3,7 @@
 import React, { Component } from 'react';
 import styled from 'styled-components';
 import { Link } from 'gatsby';
-import { Spring } from 'react-spring';
+// import { Spring } from 'react-spring';
 import ReactRevealText from 'react-reveal-text';
 
 const Article = styled(Link)`

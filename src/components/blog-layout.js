@@ -3,6 +3,7 @@ import { graphql, Link } from 'gatsby';
 import styled from 'styled-components';
 import ReactRevealText from 'react-reveal-text';
 import { Spring, Transition } from 'react-spring';
+import readingTime from 'reading-time';
 
 import Layout from './layout';
 import { media } from '../utils/media';
@@ -33,6 +34,9 @@ const BlogInfo = styled.div`
   ${media.phablet`
     margin-top: 120px;
   `};
+  ${media.phone`
+    margin-bottom: 30px;
+  `}
 `;
 
 const Tag = styled.div`
@@ -56,6 +60,15 @@ const Date = styled.div`
   z-index: 12;
   display: inline-block;
   font-size: 12px;
+`;
+
+const TimeRead = styled(Tag)`
+  float: right;
+  ${media.tablet`
+    margin-top: 2px;
+    margin-left: 0px;
+    margin-right: 20px;
+  `};
 `;
 
 const Thumbnail = styled.div`
@@ -224,6 +237,7 @@ class BlogLayout extends Component {
                 <Tag>{article.frontmatter.tag}</Tag>
                 <Seperator> |</Seperator>
                 <Date>{article.frontmatter.date}</Date>
+                <TimeRead>{readingTime(article.html).text}</TimeRead>
               </BlogInfo>
             )}
           </Spring>
