@@ -44,7 +44,7 @@ const Nav = styled.nav`
   width: 100%;
   counter-reset: item 0;
   position: relative;
-  z-index: 1;
+  z-index: 2;
 `;
 
 const Hamburger = styled.div`
