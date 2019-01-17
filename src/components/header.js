@@ -18,7 +18,7 @@ const Wrapper = styled.div`
   position: fixed;
   top: 0px;
   background-color: ${props => props.isDark ? '#000' : '#FFF'};
-  overflow: hidden;
+  /* overflow: hidden; */
   width: 100%;
   z-index: 99;
   height: ${props =>
