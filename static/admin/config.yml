@@ -3,7 +3,7 @@ backend:
 
 media_folder: static/assets
 public_folder: assets
-publish_mode: editorial_workflow
+# publish_mode: editorial_workflow
 
 slug: { encoding: ascii, clean_accents: true }
 
