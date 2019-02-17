@@ -277,7 +277,7 @@ class BlogLayout extends Component {
                             const youtubeId = item.props.value.substring(8);
                             return <YouTube
                               videoId={youtubeId}
-                              opts={{ width: '100%' }}
+                              opts={{ width: '100%', playerVars: { autoplay: 1 } }}
                             />;
                           } else {
                             return item;
