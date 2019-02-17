@@ -42,6 +42,12 @@ module.exports = {
         name: 'articles',
       },
     },
-    'gatsby-plugin-netlify-cms',
+    {
+      resolve: 'gatsby-plugin-netlify-cms',
+      options: {
+        modulePath: `${__dirname}/src/utils/cms.js`,
+        htmlTitle: 'qckhnh.com CMS',
+      },
+    },
   ],
 };

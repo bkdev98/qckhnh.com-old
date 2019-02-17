@@ -4,6 +4,8 @@ import styled from 'styled-components';
 import ReactRevealText from 'react-reveal-text';
 import { Spring, Transition } from 'react-spring';
 import readingTime from 'reading-time';
+import ReactMarkdown from 'react-markdown';
+import YouTube from 'react-youtube';
 
 import Layout from './layout';
 import { media } from '../utils/media';
@@ -258,7 +260,33 @@ class BlogLayout extends Component {
               delay={400}
             >
               {props => (
-                <Content settings={settings} dangerouslySetInnerHTML={{ __html: article.html }} style={props} />
+                <Content settings={settings} style={props}>
+                  <ReactMarkdown
+                    source={article.html}
+                    escapeHtml={false}
+                    renderers={{
+                      link: (props) => {
+                        if (props.href.endsWith('!')) {
+                          return <a href={props.href.slice(0, -1)} target="_blank" rel="nofollow noreferrer noopener">{props.children}</a>;
+                        }
+                        return <a href={props.href}>{props.children}</a>;
+                      },
+                      paragraph: props => {
+                        return props.children.map(item => {
+                          if (item.props.value && item.props.value.includes('youtube ')) {
+                            const youtubeId = item.props.value.substring(8);
+                            return <YouTube
+                              videoId={youtubeId}
+                              opts={{ width: '100%' }}
+                            />;
+                          } else {
+                            return item;
+                          }
+                        });
+                      }
+                    }}
+                  />
+                </Content>
               )}
             </Spring>
             <More settings={settings}>
