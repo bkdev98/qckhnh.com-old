@@ -15,7 +15,22 @@ module.exports = {
     },
     'gatsby-transformer-sharp',
     'gatsby-plugin-sharp',
-    'gatsby-transformer-remark',
+    {
+      resolve: "gatsby-transformer-remark",
+      options: {
+        plugins: [
+        {
+          resolve: "gatsby-remark-embed-autoplay-video",
+          options: {
+            width: '100%',
+            height: '400',
+            related: false,
+            noIframeBorder: true,
+          }
+        }
+        ]
+      }
+    },
     {
       resolve: 'gatsby-plugin-manifest',
       options: {
