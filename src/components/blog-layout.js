@@ -79,15 +79,12 @@ const Thumbnail = styled.div`
   background-size: cover;
   ${media.tablet`
     height: ${props => props.percent * 400}px;
-    width: 100%;
   `};
   ${media.thone`
     height: ${props => props.percent * 350}px;
-    width: 100%;
   `};
   ${media.phablet`
     height: ${props => props.percent * 300}px;
-    width: 100%;
   `};
 `;
 
