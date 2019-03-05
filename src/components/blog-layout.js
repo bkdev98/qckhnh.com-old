@@ -133,6 +133,19 @@ const Content = styled.div`
   p {
     margin-bottom: 10px;
   }
+  a {
+    background-color: transparent;
+    color: #FB7EBB;
+    -webkit-text-decoration-skip: objects;
+    text-decoration: none;
+    box-shadow: 0 1px 0 0 #FB7EBB;
+    font-weight: 500;
+  }
+  a:active,
+  a:hover {
+    outline-width: 0;
+    box-shadow: 0 0 0 0;
+  }
   ::selection {
     background-color: #3c3c3e;
     color: #FFF;

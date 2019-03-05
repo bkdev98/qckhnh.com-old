@@ -26,15 +26,21 @@ module.exports = {
       resolve: "gatsby-transformer-remark",
       options: {
         plugins: [
-        {
-          resolve: "gatsby-remark-embed-autoplay-video",
-          options: {
-            width: '100%',
-            height: '400',
-            related: false,
-            noIframeBorder: true,
-          }
-        }
+          {
+            resolve: "gatsby-remark-embed-autoplay-video",
+            options: {
+              width: '100%',
+              height: '400',
+              related: false,
+              noIframeBorder: true,
+            }
+          },
+          {
+            resolve: 'gatsby-remark-prismjs',
+            options: {
+              inlineCodeMarker: '÷',
+            },
+          },
         ]
       }
     },
