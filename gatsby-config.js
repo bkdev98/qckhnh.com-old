@@ -23,6 +23,12 @@ module.exports = {
     'gatsby-transformer-sharp',
     'gatsby-plugin-sharp',
     {
+      resolve: 'gatsby-plugin-mailchimp',
+      options: {
+        endpoint: 'https://inntoeq.us18.list-manage.com/subscribe/post?u=762f95dacfbb43b343d4ce507&amp;id=997e1d2ba3',
+      },
+    },
+    {
       resolve: "gatsby-transformer-remark",
       options: {
         plugins: [
