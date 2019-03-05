@@ -295,7 +295,7 @@ Bạn có thể làm tiếp input field bằng việc sử dụng `useContext` v
 
 ### Constate với useContext
 
-Thay vì loay hoai với `useContext`, tôi có một gợi ý sử dụng [Constate](https://github.com/diegohaz/constate). Đó là thư viện ưa thích của tôi vài tháng trở lại đây kể từ khi dùng Context API.
+Thay vì loay hoai với `useContext`, tôi có một gợi ý sử dụng [Constate](https://github.com/diegohaz/constate). Đó là thư viện ưa thích của tôi kể từ khi dùng Context API.
 
 Bạn sẽ thực sự ngạc nhiên về những gì nó đem lại:
 
