@@ -5,7 +5,6 @@ tag: reactjs
 thumbnail: /assets/state-management-2019.jpg
 date: '2019-03-05'
 ---
-
 Bạn ngồi cùng bàn nhậu với những lập trình viên React và muốn câu chuyện trở nên gay gắt, hãy nhắc đến chủ để state management.
 
 Mỗi người có một sở thích riêng. Fandom Redux yêu thích các action và reducer và saga và thunk và đủ các kiểu. Fandom MobX lại thích observer và action và việc ghi đè object mặc định,…
@@ -260,7 +259,7 @@ Nhưng mà vẫn còn nữa nha.
 
 Với việc phát hành chính thức của Hooks kể từ React 16.8, chúng ta có được một công cụ hỗ trợ viết code React gọn gàng và đơn giản hơn bao giờ hết.
 
-Nếu chưa biết về React Hooks, bạn có thể đọc thêm ở đây.
+Nếu chưa biết về React Hooks, bạn có thể đọc thêm [ở đây](https://reactjs.org/docs/hooks-intro.html).
 
 _Tips_: đừng bỏ qua video tuyệt vời giới thiệu React Hooks của [@dan_abramov](https://twitter.com/dan_abramov) tại React Conf 2018.
 
@@ -332,7 +331,7 @@ function Login() {
 }
 ```
 
-Cách hoạt động:
+**Cách hoạt động:**
 
 1. Khai báo một custom hook với những state và handler cần thiết.
 2. Hook trả về những API của nó như một object.
@@ -341,4 +340,4 @@ Cách hoạt động:
 5. `Error` là một phương thức mới. Nhờ có context, ta có thể tách phần xử lý lỗi vào component này. Một lần nữa ta sử dụng `useEffect` để chạy những validation khi user hay pass thay đổi.
 6. Form đăng nhập trở nên đơn giản hơn bao giờ hết, chỉ việc render context, fields và error.
 
-Chúc mọi người có một ngày làm việc với nhiều niềm vui.
+> Chúc mọi người có một ngày làm việc với nhiều niềm vui.
