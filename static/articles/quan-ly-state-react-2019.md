@@ -7,13 +7,13 @@ date: '2019-03-05'
 ---
 Bạn ngồi cùng bàn nhậu với những lập trình viên React và muốn câu chuyện trở nên gay gắt, hãy nhắc đến chủ để state management.
 
-Mỗi người có một sở thích riêng. Fandom Redux yêu thích các action và reducer và saga và thunk và đủ các kiểu. Fandom MobX lại thích observer và action và việc ghi đè object mặc định…
+Mỗi người có một sở thích riêng. Fandom Redux yêu thích các action và reducer và saga và thunk và đủ các kiểu. Fandom MobX lại thích observer và action và việc ghi đè object mặc định,…
 
 Dĩ nhiên, cả hai đều cho rằng đó là cách đơn giản nhất.
 
 ![You don't need Redux](/assets/you-dont-need-redux.png)
 
-> Nhưng đây là 2019, có lẽ bạn đã không còn cần đến một thư viện để quản lý state nữa.
+Nhưng đây là 2019, có lẽ bạn đã không còn cần đến một thư viện để quản lý state nữa.
 
 Bạn đang xây dựng một ứng dụng đơn giản với ít thuộc tính được chia sẻ giữa các component? Hãy dùng local state.
 
@@ -55,7 +55,7 @@ class Field extends React.Component {
 }
 ```
 
-Đây là một input field với hai state là value và error. Khi nội dung được gõ, hàm `onChange` được kích hoạt và cập nhật state. State thay đổi làm component render lại và user có thể nhìn thấy được nội dung họ đã nhập.
+Đây là một input field với hai `state` là `value` và error. Khi nội dung được gõ, hàm `onChange` được kích hoạt và cập nhật state. State thay đổi làm component render lại và user có thể nhìn thấy được nội dung họ đã nhập.
 
 Field validation được kích hoạt sau khi cập nhật state, nó sẽ kiểm tra những điều kiện cần thiết và cập
 nhật lỗi nếu phát hiện. Bạn thể có dùng state error này để cảnh báo lỗi đến người dùng (đổi màu chữ hay hiện nội dung lỗi).
@@ -334,12 +334,10 @@ function Login() {
 **Cách hoạt động:**
 
 1. Khai báo một custom hook với những state và handler cần thiết.
-2. Hook trả về những API của nó như một object.
+2. Hook trả về những API dưới dạng object.
 3. Sử dụng phương thức `createContainer` của Constate để gộp custom hook vào một container.
 4. Vẫn giống như trước, `ContextField` về cơ bản là một context-based wrapper. Nó nhận thuộc tính `name` và sử dụng nó để lấy giá trị từ state. Trong trường hợp này ta có thể chủ động quyết định hàm `setX` nào sẽ được dùng.
 5. `Error` là một phương thức mới. Nhờ có context, ta có thể tách phần xử lý lỗi vào component này. Một lần nữa ta sử dụng `useEffect` để chạy những validation khi user hay pass thay đổi.
 6. Form đăng nhập trở nên đơn giản hơn bao giờ hết, chỉ việc render context, fields và error.
 
-`youtube:SneCkM0bJq0`
-
-Chúc mọi người có một ngày làm việc với nhiều niềm vui.
+> Chúc mọi người có một ngày làm việc với nhiều niềm vui.
