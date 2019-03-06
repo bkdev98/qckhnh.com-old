@@ -8,8 +8,8 @@ import { media } from '../utils/media';
 import image from '../images/dg-landing.gif';
 
 const Container = styled.div`
-  background: #fff;
-  color: #202020;
+  background: ${props => props.dark ? '#000' : '#fff'};
+  color: ${props => props.dark ? '#fff' : '#202020'};
   min-height: 100vh;
   font-family: 'Noto Serif', serif;
 `;
@@ -38,7 +38,7 @@ const SubTitle = styled.p`
   font-size: 22px;
   margin-bottom: 30px;
   line-height: 28px;
-  max-width: 70%;
+  max-width: 80%;
   ${media.desktop`
     max-width: 100%;
   `};
@@ -135,7 +135,7 @@ class DreamyGardenPage extends Component {
     return (
       <Fragment>
         <SEO title='Dreamy Garden' />
-        <Container>
+        <Container dark={(new Date()).getHours() > 18}>
           <Wrapper>
             <Col md={6} sm={12}>
               <Title>dreamy garden</Title>
