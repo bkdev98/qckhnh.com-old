@@ -802,9 +802,9 @@
   resolved "https://registry.yarnpkg.com/@types/node/-/node-10.12.5.tgz#7e7ea1a9b34d2c8d704cb0b755dffbcda34741ad"
 
 "@types/node@^10.12.12":
-  version "10.12.26"
-  resolved "https://registry.yarnpkg.com/@types/node/-/node-10.12.26.tgz#2dec19f1f7981c95cb54bab8f618ecb5dc983d0e"
-  integrity sha512-nMRqS+mL1TOnIJrL6LKJcNZPB8V3eTfRo9FQA2b5gDvrHurC8XbSA86KNe0dShlEL7ReWJv/OU9NL7Z0dnqWTg==
+  version "10.12.29"
+  resolved "https://registry.yarnpkg.com/@types/node/-/node-10.12.29.tgz#c2c8d2d27bb55649fbafe8ea1731658421f38acf"
+  integrity sha512-J/tnbnj8HcsBgCe2apZbdUpQ7hs4d7oZNTYA5bekWdP0sr2NGsOpI/HRdDroEi209tEvTcTtxhD0FfED3DhEcw==
 
 "@types/node@^7.0.11":
   version "7.10.1"
@@ -5261,9 +5261,9 @@ gatsby-react-router-scroll@^2.0.1:
     warning "^3.0.0"
 
 gatsby-remark-embed-autoplay-video@^1.7.1:
-  version "1.7.1"
-  resolved "https://registry.yarnpkg.com/gatsby-remark-embed-autoplay-video/-/gatsby-remark-embed-autoplay-video-1.7.1.tgz#f9c31f1a9ff6c07efd97ab3dcee76df53795e755"
-  integrity sha512-Xl3qVSatqbxSOHBwXoJG4a12xJqFi2PsL972auXFpqVhmCGBs0y8sD+DZUUvT5jFY2g0+gDYQAFlPG1Bb6YOXQ==
+  version "1.7.2"
+  resolved "https://registry.yarnpkg.com/gatsby-remark-embed-autoplay-video/-/gatsby-remark-embed-autoplay-video-1.7.2.tgz#13c15857830bb240095ebec958d7faa27bf9f7df"
+  integrity sha512-DDKx+aoTDFziiz+AP/avkd0suSivKCVaJ0ktCZplrxJ4+A2ebI4IXKSvzFmI5pwROmBmj8yEzNnPfpOQbRREbg==
   dependencies:
     "@types/node" "^10.12.12"
     get-video-id "^3.1.0"
@@ -12562,6 +12562,7 @@ unist-util-generated@^1.1.0:
 unist-util-is@^2.0.0, unist-util-is@^2.1.0, unist-util-is@^2.1.2:
   version "2.1.2"
   resolved "https://registry.yarnpkg.com/unist-util-is/-/unist-util-is-2.1.2.tgz#1193fa8f2bfbbb82150633f3a8d2eb9a1c1d55db"
+  integrity sha512-YkXBK/H9raAmG7KXck+UUpnKiNmUdB+aBGrknfQ4EreE1banuzrKABx3jP6Z5Z3fMSPMQQmeXBlKpCbMwBkxVw==
 
 unist-util-modify-children@^1.0.0:
   version "1.1.3"
@@ -12602,6 +12603,7 @@ unist-util-visit-parents@1.1.2, unist-util-visit-parents@^1.1.1:
 unist-util-visit-parents@^2.0.0:
   version "2.0.1"
   resolved "https://registry.yarnpkg.com/unist-util-visit-parents/-/unist-util-visit-parents-2.0.1.tgz#63fffc8929027bee04bfef7d2cce474f71cb6217"
+  integrity sha512-6B0UTiMfdWql4cQ03gDTCSns+64Zkfo2OCbK31Ov0uMizEz+CJeAp0cgZVb5Fhmcd7Bct2iRNywejT0orpbqUA==
   dependencies:
     unist-util-is "^2.1.2"
 
