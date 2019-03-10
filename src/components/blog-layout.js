@@ -192,6 +192,35 @@ const More = styled.div`
   }
 `;
 
+const Serie = styled.div`
+  margin: 80px 100px 0px;
+  ${media.tablet`
+    margin: 80px 30px 0px;
+  `};
+  ${media.thone`
+    margin: 80px 20px 0px;
+  `};
+  border: 2px solid #FB7EBB;
+  padding: 20px;
+  font-size: 15px;
+  a {
+    color: #FB7EBB;
+    text-decoration: none;
+    box-shadow: 0px 2px 0px 0px #FB7EBB;
+    :hover {
+      box-shadow: 0px 0px 0px 0px #FB7EBB;
+    }
+  }
+  ul {
+    list-style: square;
+    padding-left: 20px;
+    margin-top: 10px;
+  }
+  li {
+    margin-bottom: 0px;
+  }
+`;
+
 const DEFAULT_SETTINGS = {
   theme: 'light',
   font: 'Roboto Mono',
@@ -225,8 +254,28 @@ class BlogLayout extends Component {
 
   handleResetSetting = () => this.setState({ settings: DEFAULT_SETTINGS }, () => localStorage.removeItem(STORAGE_KEY))
 
+  renderSerie = (data) => {
+    const { data: { article, serie } } = this.props;
+    return data.length > 0 && (
+      <Serie>
+        <p>This article belongs to serie <Link to={`/serie${serie.fields.slug}`}>{article.frontmatter.serie}</Link>:</p>
+        <ul>
+          {data.map(({ node }) => article.frontmatter.title === node.frontmatter.title
+            ? (
+              <li key={node.fields.slug}>{node.frontmatter.title} (currently reading)</li>
+            )
+            : (
+              <li key={node.fields.slug}>
+                <Link to={node.fields.slug}>{node.frontmatter.title}</Link>
+              </li>
+            ))}
+        </ul>
+      </Serie>
+    );
+  }
+
   render() {
-    const { data: { markdownRemark: article } } = this.props;
+    const { data: { article, sameSerie } } = this.props;
     const { revealTitle, transition, settings } = this.state;
 
     return (
@@ -262,6 +311,7 @@ class BlogLayout extends Component {
           </Transition>
           <TextWrapper>
             <Title show={revealTitle}>{article.frontmatter.title}</Title>
+            {/* {this.renderSerie(sameSerie.edges)} */}
             <Spring
               from={{ opacity: 0, marginTop: 120 }}
               to={{ opacity: 1, marginTop: 80 }}
@@ -271,6 +321,7 @@ class BlogLayout extends Component {
                 <Content settings={settings} dangerouslySetInnerHTML={{ __html: article.html }} style={props} />
               )}
             </Spring>
+            {this.renderSerie(sameSerie.edges)}
             <More settings={settings}>
               <Link to='/blog'>
                 <Spring
@@ -294,15 +345,37 @@ class BlogLayout extends Component {
 export default BlogLayout;
 
 export const query = graphql`
-  query($slug: String!) {
-    markdownRemark(fields: { slug: { eq: $slug } }) {
+  query($slug: String!, $serie: String) {
+    article: markdownRemark(fields: { slug: { eq: $slug } }) {
       html
       frontmatter {
         title
         description
         tag
         thumbnail
+        serie
         date(formatString: "DD-MM-YYYY")
+      }
+    }
+    serie: markdownRemark(frontmatter: { title: { eq: $serie } }) {
+      fields {
+        slug
+      }
+    }
+    sameSerie: allMarkdownRemark(
+      filter: { frontmatter: { serie: { eq: $serie } } }
+      sort: { fields: [frontmatter___date], order: DESC }
+    ) {
+      edges {
+        node {
+          fields {
+            slug
+          }
+          frontmatter {
+            title
+            date(formatString: "DD-MM-YYYY")
+          }
+        }
       }
     }
   }

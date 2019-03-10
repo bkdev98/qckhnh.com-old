@@ -4,7 +4,9 @@ description: "Đ\x1Dến ngày cuối cùng rồi nhưng vẫn còn ôm ấp nh�
 tag: general
 thumbnail: /assets/chuyen-cu-ha-noi.png
 date: 2018-10-08
+serie:
 ---
+
 Dịp ra Bắc đầu tiên, xem nhiều, nghe nhiều, nghĩ nhiều, mà lại chẳng muốn viết nhiều. Chợt nghĩ lại, đến ngày cuối cùng rồi nhưng vẫn còn ôm ấp những thứ lạ lẫm này chẳng muốn chia sẻ với ai…
 
 Chuyến xe khách từ Quảng Ninh ra sân bay Nội Bài buổi chiều tà, tôi làm quen với chú ngồi cạnh, giọng khề khà, nghĩ bụng là người Nam. Trò chuyện một lúc mới biết chú cũng gốc Tiền Giang, quê ở Cai Lậy. Vợ chú cũng là người Nam, quê ở Long An. Lên Sài Gòn học thêm rồi gặp cô vài lần. Vì công việc nên chú ra Bắc, cô cũng theo chú làm vợ cũng đã hai mươi năm nay.

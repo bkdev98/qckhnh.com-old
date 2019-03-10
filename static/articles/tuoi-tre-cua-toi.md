@@ -4,7 +4,9 @@ description: Tuổi trẻ như thế này thì có được không?
 tag: general
 thumbnail: /assets/tuoi-tre-cua-toi.png
 date: 2019-01-09
+serie:
 ---
+
 Gần 1h sáng bạn gọi cho tôi, nói rằng muốn trò chuyện một lúc. Tôi đang ngồi trong một quán cà phê, đóng quyển sách lại và bật máy tính. Chúng tôi nhắn tin qua facebook. Hiện tại tôi rất hạn chế nói chuyện bằng facebook, nhưng lại chẳng thể gặp nhau vào lúc này. Qua rồi những ngày tôi có thể thoải mái đến gặp những người bạn, khi họ cần, vào bất kỳ lúc nào. Vài năm trước hồi trung học, đó là sự lãng mạn. Còn bây giờ ngay lúc này, đó là một chút kỳ cục, chưa kể bạn đã có người yêu. Cũng có thể chỉ do tôi nghĩ như vậy.
 
 Bạn không nhắc đến chuyện chia tay, nhưng tôi hiểu được những gì đang xảy ra. Chúng tôi đã quen biết nhau gần 6 năm, từ khi bước chân vào lớp 10. Những chuyện giận hờn, những hiểu lầm, trong khoảng thời gian ấy đã xảy ra biết bao nhiêu lần chúng tôi chẳng còn nhớ nổi. Có những vấn đề thậm chí còn xưa cũ và bé nhỏ hơn nữa. Khác chăng, mỗi lần giận hờn ở hiện tại là một khả năng sẽ xa nhau, mãi mãi.

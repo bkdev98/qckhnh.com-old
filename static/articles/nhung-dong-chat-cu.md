@@ -4,7 +4,9 @@ description: Tôi là kiểu người thích nói chuyện bằng chữ chứ kh
 tag: general
 thumbnail: /assets/nhung-dong-chat-cu.png
 date: 2018-10-21
+serie:
 ---
+
 Tôi là kiểu người thích nói chuyện bằng chữ chứ không phải bằng lời.
 
 Mấy hôm nay bạn bè tôi hay dùng một công cụ để xem lại những tin nhắn Facebook đầu tiên với một ai đó, mới nhận ra mình đã quên mất tính năng này bao lâu nay.

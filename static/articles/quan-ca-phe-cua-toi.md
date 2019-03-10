@@ -4,6 +4,7 @@ description: 'Một nơi để ai đó đến, và trở lại.'
 tag: General
 thumbnail: /assets/quan-cf-cua-toi.jpg
 date: 2018-07-24
+serie:
 ---
 Lắm lúc khi không còn muốn mở quán nhậu, tôi vẫn thường hay muốn mở một quán cà phê nhỏ bán bánh ngọt. Quán sẽ không đông, cũng không kéo quá nhiều khách hàng. Tôi chỉ cần một góc thật nhẹ nhàng, để bạn bè có thể cùng nhau ngồi trò chuyện, ăn bánh, uống trà, nhấm nháp cà phê. Đó sẽ là một cửa hàng cà phê và bánh nhỏ, nằm khuất trong 1 con hẻm ở trung tâm Sài Gòn. Bạn có thể đi xe buýt rồi đi bộ tới đó, hoặc chạy xe vào hẻm, một nơi khác xa cuộc sống tấp nập ngoài kia.
 

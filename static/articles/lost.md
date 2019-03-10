@@ -4,7 +4,9 @@ description: I think I've lost my carefree spirit. For ever.
 tag: general
 thumbnail: /assets/lost.png
 date: '2019-02-17'
+serie:
 ---
+
 When I was lost and had that violent desire to write, I couldn't squeeze out fifteen minutes to do it. I was too occupied by other works. And now that I have plenty of time in hand, nothing comes out of my fingertips.
 
 Said to a friend: I think I've lost my carefree spirit. For ever. It's a good price to pay, and a good day to die. Everybody should grow up? Anyway, I have been able to preserve that child in my heart for too long. Twenty years.

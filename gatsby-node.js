@@ -19,23 +19,57 @@ exports.createPages = ({ graphql, actions }) => {
   return new Promise((resolve) => {
     graphql(`
       {
-        allMarkdownRemark {
+        articles: allMarkdownRemark(
+          filter: { fileAbsolutePath: { regex: "/articles/" } }
+        ) {
           edges {
             node {
               fields {
                 slug
+              }
+              frontmatter {
+                serie
+              }
+            }
+          }
+        }
+        series: allMarkdownRemark(
+          filter: { fileAbsolutePath: { regex: "/series/" } }
+        ) {
+          edges {
+            node {
+              fields {
+                slug
+              }
+              frontmatter {
+                title
+                description
+                thumbnail
               }
             }
           }
         }
       }
     `).then(result => {
-      result.data.allMarkdownRemark.edges.forEach(({ node }) => {
+      result.data.articles.edges.forEach(({ node }) => {
         createPage({
           path: node.fields.slug,
           component: path.resolve('./src/components/blog-layout.js'),
           context: {
             slug: node.fields.slug,
+            serie: node.frontmatter.serie,
+          },
+        });
+      });
+      result.data.series.edges.forEach(({ node }) => {
+        createPage({
+          path: '/serie' + node.fields.slug,
+          component: path.resolve('./src/components/serie-layout.js'),
+          context: {
+            slug: node.fields.slug,
+            title: node.frontmatter.title,
+            description: node.frontmatter.description,
+            thumbnail: node.frontmatter.thumbnail,
           },
         });
       });

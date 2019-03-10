@@ -4,7 +4,9 @@ description: React là một sự đầu tư xứng đáng.
 tag: Coding
 thumbnail: /assets/react-year-two.jpeg
 date: 2018-07-11
+serie:
 ---
+
 Bắt đầu một công nghệ mới có thể khá rắc rối. Bạn sẽ tìm thấy mình trong một đại dương mênh mông các hướng dẫn, bài viết, cùng hàng triệu những ý kiến cá nhân. Và ai nấy cũng đặt tiêu đề rằng họ đã tìm thấy “cách đúng đắn nhất“.
 
 Trước khi lặn xuống đại đương ấy, chúng ta phải hiểu các khái niệm cơ bản của công nghệ. Sau đó, ta cần phát triển tư duy dựa trên công nghệ đó. Nếu bạn bắt đầu học React, điều đầu tiên cần làm là hiểu được những [suy nghĩ trong React](https://reactjs.org/docs/thinking-in-react.html). Chỉ như vậy, sau này bạn mới có thể kết hợp những suy nghĩ khác nhau thành một.
@@ -16,11 +18,11 @@ Trong bài viết này, tôi sẽ đề cập đến một số bài học mà t
 Nếu bạn có mặt ở thời điểm Facebook đưa ra những thông báo ban đầu về phiên bản 16.3.0, bạn sẽ thấy mọi người đều đã phấn khích như thế nào.
 Dưới đây là một số thay đổi và cải tiến mà tôi cập nhật được:
 
-* Context API được nâng cấp, trở thành một sự thay thế cho Redux
-* createRef API
-* forwardRef API
-* StrictMode
-* Những thay đổi trong Component Lifecycle
+- Context API được nâng cấp, trở thành một sự thay thế cho Redux
+- createRef API
+- forwardRef API
+- StrictMode
+- Những thay đổi trong Component Lifecycle
 
 Nhóm React Core và những contributors đang thực hiện công việc với một hiệu suất ấn tượng để cải tiến công nghệ mà chúng ta yêu thích. Trong phiên bản 16.4.0, thậm chí chúng ta sẽ có thêm Pointer Event.
 
@@ -87,11 +89,11 @@ Còn nếu lo lắng về việc tạo nhiều component do chưa biết phải 
 Càng tìm hiểu về những chủ đề nâng cao, bạn sẽ biết nhiều hơn những thứ cơ bản và cách chúng được dùng cho những thứ lớn.
 React có rất nhiều chủ đề hay cho bạn tìm hiểu:
 
-* Compound Components
-* Higher Order Components
-* Render Props
-* Smart/Dumb Components
-* nhiều thức khác nữa…
+- Compound Components
+- Higher Order Components
+- Render Props
+- Smart/Dumb Components
+- nhiều thức khác nữa…
 
 Khám phá những điều này, hiểu được tại sao và ở đâu chúng được dùng, bạn sẽ cảm thấy thoải mái hơn rất nhiều khi làm việc với React.
 

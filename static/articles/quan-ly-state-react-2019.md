@@ -4,7 +4,7 @@ description: "\x1CBạn đã không còn cần đến một thư viện để qu
 tag: reactjs
 thumbnail: /assets/state-management-2019.jpg
 date: '2019-03-05'
-serie: React cho mọi người
+serie:
 ---
 Bạn ngồi cùng bàn nhậu với những lập trình viên React và muốn câu chuyện trở nên gay gắt, hãy nhắc đến chủ để state management.
 

@@ -6,7 +6,9 @@ description: >-
 tag: Movies
 thumbnail: /assets/christopher-robin.png
 date: 2018-08-11
+serie:
 ---
+
 Từ rạp chiếu phim về, tôi đang loay hoay với việc viết gì đó với những cảm xúc này, cái cảm xúc thật đặc biệt mà tôi chưa từng tìm thấy trong một bộ phim rạp nào khác. Mẹ tôi gọi, lâu rồi mới nhận được cú điện thoại của ai đó từ gia đình. Mẹ dặn tôi đừng thức khuya quá, đừng ngồi mãi một chỗ, nhớ ăn uống điều độ. Mẹ còn dặn nhiều thứ khác, có những thứ mà suýt nữa thì tôi đã quên mất chúng từng là thói quen của mình.
 
 Cũng đã mấy năm tôi học xa nhà, chúng tôi thậm chí không còn nhiều điểm chung để mà chia sẻ với nhau khi có dịp gần gũi. Khoảng cách giữa chúng tôi lớn dần, nhưng tôi vẫn luôn gắng, chủ động hay bị động, không khiến nó xa quá, để mình còn có thể níu giữ được, tôi nghĩ tôi cần làm vậy.
@@ -31,7 +33,7 @@ Thế rồi bỗng nhiên đến một ngày tôi đã lớn lên.
 
 Vì thế sẽ chẳng hề gì, nếu tôi được phép sống câu chuyện của riêng mình và kết thúc cùng với nó, có phải không? Và thậm chí cho đến lúc chết, sẽ chẳng có cái chết nào chạm vào chúng ta được. Sẽ chẳng có điều tồi tệ nào ở đây khi ta còn sống, dù cho chúng ta, ở tương lai hay quá khứ, rồi sẽ lần lượt chia tay nhau mãi mãi. Sẽ chẳng hề gì, có phải không?
 
-- - -
+---
 
 Tôi cũng chẳng thể nhớ nổi mình đã viết đoạn kết cho bài viết này vào lúc nào, hay đã đăng đâu đó trên mạng xã hội những khi trống rỗng. Bộ phim mang tôi tìm về với mảnh ghép này, cũng vừa vặn để khép lại câu chuyện ở đây, trong một ngày hôm nay đẹp trời.
 

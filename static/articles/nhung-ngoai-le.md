@@ -6,7 +6,9 @@ description: >-
 tag: general
 thumbnail: /assets/nhung-ngoai-le.png
 date: 2018-12-12
+serie:
 ---
+
 Mình chưa bao giờ nói sẽ đo đếm tình cảm dành cho người khác, nhưng vẫn luôn phân biệt, ai quan trọng, ai là ai.
 
 Bạn hỏi mình, điều ý nghĩa nhất mình làm cho một ai đó là gì, thì câu trả lời là: cho họ một ngoại lệ.

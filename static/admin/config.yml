@@ -19,6 +19,13 @@ collections:
       - { name: thumbnail, label: Ảnh bìa, widget: image }
       - { name: body, label: Nội dung, widget: markdown }
       - { name: date, label: Ngày đăng, widget: date, format: YYYY-MM-DD }
+      - label: 'Loạt bài'
+        name: 'serie'
+        widget: 'relation'
+        collection: 'series'
+        searchFields: ['title']
+        valueField: 'title'
+        displayFields: ['title', 'date']
   - name: series
     label: Loạt bài
     folder: static/series
