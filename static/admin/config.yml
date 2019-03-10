@@ -15,7 +15,16 @@ collections:
     fields:
       - { name: title, label: Tiêu đề }
       - { name: description, label: Mô tả ngắn, widget: text }
-      - { name: tag, label: Thẻ bài viết, widget: string}
+      - { name: tag, label: Thẻ bài viết, widget: string }
       - { name: thumbnail, label: Ảnh bìa, widget: image }
       - { name: body, label: Nội dung, widget: markdown }
+      - { name: date, label: Ngày đăng, widget: date, format: YYYY-MM-DD }
+  - name: series
+    label: Loạt bài
+    folder: static/series
+    create: true
+    fields:
+      - { name: title, label: Tiêu đề }
+      - { name: description, label: Mô tả ngắn, widget: text }
+      - { name: thumbnail, label: Ảnh bìa, widget: image }
       - { name: date, label: Ngày đăng, widget: date, format: YYYY-MM-DD }
