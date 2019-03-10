@@ -258,7 +258,7 @@ class BlogLayout extends Component {
     const { data: { article, serie } } = this.props;
     return data.length > 0 && (
       <Serie>
-        <p>This article belongs to serie <Link to={`/serie${serie.fields.slug}`}>{article.frontmatter.serie}</Link>:</p>
+        <p>This article belongs to serie <Link to={`/serie${serie && serie.fields.slug}`}>{article.frontmatter.serie}</Link>:</p>
         <ul>
           {data.map(({ node }) => article.frontmatter.title === node.frontmatter.title
             ? (
