@@ -77,6 +77,13 @@ module.exports = {
       },
     },
     {
+      resolve: 'gatsby-source-filesystem',
+      options: {
+        path: `${__dirname}/static/series`,
+        name: 'series',
+      },
+    },
+    {
       resolve: 'gatsby-plugin-netlify-cms',
       options: {
         modulePath: `${__dirname}/src/utils/cms.js`,
