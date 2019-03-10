@@ -57,7 +57,7 @@ exports.createPages = ({ graphql, actions }) => {
           component: path.resolve('./src/components/blog-layout.js'),
           context: {
             slug: node.fields.slug,
-            serie: node.frontmatter.serie,
+            serie: node.frontmatter.serie || 'no-serie',
           },
         });
       });

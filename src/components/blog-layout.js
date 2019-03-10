@@ -321,7 +321,7 @@ class BlogLayout extends Component {
                 <Content settings={settings} dangerouslySetInnerHTML={{ __html: article.html }} style={props} />
               )}
             </Spring>
-            {this.renderSerie(sameSerie.edges)}
+            {this.renderSerie(sameSerie ? sameSerie.edges : [])}
             <More settings={settings}>
               <Link to='/blog'>
                 <Spring

@@ -3,11 +3,12 @@ title: 'React 01: Khởi đầu'
 description: >-
   Một cách đơn giản để tiếp cận React, thư viện JavaScript phổ biến nhất thế
   giới.
-tag: react
+tag: reactjs
 thumbnail: /assets/react-for-everyone.png
 date: '2019-03-10'
 serie: React cho mọi người
 ---
+
 Nhiều nhiều năm về trước, lập trình web từng vô cùng đơn giản. Bạn chỉ cần mở notepad, copy đoạn code dưới đây vào, lưu lại với tên `mypage.html` rồi mở nó lên bằng một trình duyệt bất kỳ:
 
 ```html
@@ -32,7 +33,7 @@ JavaScript về bản chất thực sự rất đơn giản. Bạn chỉ cần d
   <head>
     <title>My page</title>
     <script>
-      alert("Hello!");
+      alert('Hello!')
     </script>
   </head>
   <body>
@@ -51,7 +52,7 @@ Chính vì vậy, các `function` và `event` xuất hiện. Function là cách 
     <title>My page</title>
     <script>
       function sayHello() {
-        alert("Hello!");
+        alert('Hello!')
       }
     </script>
   </head>
@@ -68,22 +69,24 @@ Vậy là bạn đã trở thành một /web developer/ chân chính rồi đó!
 React là một thư viện JavaScript giúp tạo những sự tương tác dễ dàng hơn. Dưới đây là một đoạn code có chức năng tương tự như ở trên, nhưng được viết bằng React:
 
 ```jsx
-import React from "react";
+import React from 'react'
 
 export function Page() {
   function sayHello() {
-    alert("Hello!");
+    alert('Hello!')
   }
-  return <button onClick={sayHello}>Click me</button>;
+  return <button onClick={sayHello}>Click me</button>
 }
 ```
+
 [Chạy thử Demo](https://codesandbox.io/s/m4vxr39jqp?fontsize=14)
 
 Đó là React, code cũng khá giống với ban đầu, nhưng đơn giản hơn. Những sự thay đổi đáng kể nhất:
-* Với React, bạn sẽ viết HTML code trong JavaScript (thay vì những cách khác).
-* Trang Page bây giờ sẽ là một function. Đó là cách để giải quyết vấn đề mà tôi sẽ giải thích bên dưới.
-* Function `sayHello` vẫn giữ nguyên như cũ, nhưng bạn không cần dùng thẻ `<script>` nữa.
-* Cuối cùng, nút `<button>` vẫn giống như HTML.
+
+- Với React, bạn sẽ viết HTML code trong JavaScript (thay vì những cách khác).
+- Trang Page bây giờ sẽ là một function. Đó là cách để giải quyết vấn đề mà tôi sẽ giải thích bên dưới.
+- Function `sayHello` vẫn giữ nguyên như cũ, nhưng bạn không cần dùng thẻ `<script>` nữa.
+- Cuối cùng, nút `<button>` vẫn giống như HTML.
 
 Có thể thấy được React hoàn toàn tập trung vào việc sử dụng ít thẻ hơn để tăng tốc quy trình làm việc. Nhưng đó không phải là lý do tại sao mọi người lại rất hào hứng với việc xây dựng mọi thứ bằng React. Nó không chỉ về việc sử dụng ít thẻ hơn, mà còn vì bạn có thể tạo nên các thẻ của riêng mình. Và các thẻ bạn tạo trong React được gọi là các component.
 
@@ -93,10 +96,10 @@ Chúng ta sẽ thử làm một ví dụ nữa, lần này là thanh điều hư
 
 ```html
 <div>
-  <div><img src="image/Home.png"><span>Home</span></div>
-  <div><img src="image/Blog.png"><span>Blog</span></div>
-  <div><img src="image/Now.png"><span>Now</span></div>
-  <div><img src="image/About.png"><span>About</span></div>
+  <div><img src="image/Home.png" /><span>Home</span></div>
+  <div><img src="image/Blog.png" /><span>Blog</span></div>
+  <div><img src="image/Now.png" /><span>Now</span></div>
+  <div><img src="image/About.png" /><span>About</span></div>
 </div>
 ```
 
@@ -124,9 +127,9 @@ function MenuItem(props) {
       <img src={`image/${props.name}.png`} />
       <span>{props.name}</span>
     </div>
-  );
+  )
 }
- 
+
 function Menu() {
   return (
     <div>
@@ -135,7 +138,7 @@ function Menu() {
       <MenuItem name="Now" />
       <MenuItem name="About" />
     </div>
-  );
+  )
 }
 ```
 
