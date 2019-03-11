@@ -130,6 +130,14 @@ const Content = styled.div`
   z-index: 21;
   font-family: ${props => `${props.settings.font}, 'Roboto Mono', monospace`};
   font-weight: 300;
+  ::first-letter {
+    float: left;
+    color: #ffa7c4;
+    margin: 15px 2px 0 -5px;
+    line-height: .7;
+    font-size: 67px;
+    font-weight: 500;
+  }
   p {
     margin-bottom: 10px;
   }

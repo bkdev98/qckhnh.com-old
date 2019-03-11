@@ -13,6 +13,22 @@ const Wrapper = styled.div`
   margin-top: 150px;
 `;
 
+const Meta = styled.div`
+  max-width: 550px;
+  margin: 0 auto;
+`;
+
+const Title = styled.h3`
+  color: #3C3C3E;
+  text-align: center;
+`;
+
+const Description = styled.p`
+  color: #FB7EBB;
+  text-align: center;
+  font-size: 16px;
+`;
+
 const getMarginTop = idx => {
   if (idx === 1 || (idx - 1) % 3 === 0) {
     return '100px';
@@ -31,9 +47,12 @@ const Series = ({ data: { articles }, pageContext }) => (
     />
     <Wrapper>
       <Grid fluid>
-        <h3 style={{ textAlign: 'center', backgroundColor: '#3C3C3E', color: '#FB7EBB', padding: '15px 0' }}>
-          {pageContext.title}
-        </h3>
+        <Meta>
+          <Title>
+            {pageContext.title}
+          </Title>
+          <Description>{pageContext.description}</Description>
+        </Meta>
         <Row style={{ marginTop: 80 }}>
           {articles.edges.map(({ node }, idx) => (
             <Col lg={4} md={6} sm={12} key={node.id} style={{ marginTop: getMarginTop(idx) }}>
