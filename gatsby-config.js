@@ -90,5 +90,11 @@ module.exports = {
         htmlTitle: 'qckhnh.com CMS',
       },
     },
+    {
+      resolve: 'gatsby-plugin-drift',
+      options: {
+        appId: '5hwf7nw43gmr',
+      },
+    },
   ],
 };
