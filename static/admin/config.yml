@@ -14,14 +14,15 @@ collections:
     create: true
     fields:
       - { name: title, label: Tiêu đề }
-      - { name: description, label: Mô tả ngắn, widget: text }
-      - { name: tag, label: Thẻ bài viết, widget: string }
-      - { name: thumbnail, label: Ảnh bìa, widget: image }
+      - { name: description, label: Mô tả ngắn, widget: text, required: false }
+      - { name: tag, label: Thẻ bài viết, widget: string, required: false }
+      - { name: thumbnail, label: Ảnh bìa, widget: image, required: false }
       - { name: body, label: Nội dung, widget: markdown }
       - { name: date, label: Ngày đăng, widget: date, format: YYYY-MM-DD }
       - label: 'Loạt bài'
         name: 'serie'
         widget: 'relation'
+        required: false
         collection: 'series'
         searchFields: ['title']
         valueField: 'title'
