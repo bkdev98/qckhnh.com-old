@@ -27,7 +27,7 @@ Nhưng một website tĩnh dễ đem đến sự nhàm chán. Sự phát triển
 
 JavaScript về bản chất thực sự rất đơn giản. Bạn chỉ cần dùng thẻ `<script>` và viết vài dòng code vào đó.
 
-```html{4,6}
+```html
 <html>
   <head>
     <title>My page</title>
