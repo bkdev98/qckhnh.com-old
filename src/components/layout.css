@@ -879,3 +879,12 @@ pre[class*='language-'] ::selection {
   float: left;
   min-width: 100%;
 }
+
+.sub-title::before {
+  color: #FB7EBB;
+  content: "\201C";
+  font-size: 5em;
+  top: 0.3em;
+  left: -5px;
+  line-height: 0.1em;
+}

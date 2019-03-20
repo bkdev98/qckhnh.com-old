@@ -8,6 +8,7 @@ import readingTime from 'reading-time';
 import Layout from './layout';
 import { media } from '../utils/media';
 import SEO from './seo';
+import EmailSubscribe from './email-subscribe';
 
 const STORAGE_KEY = 'qckhnh-settings';
 
@@ -336,6 +337,7 @@ class BlogLayout extends Component {
               </Link>
             </More>
           </TextWrapper>
+          <EmailSubscribe />
         </Wrapper>
       </Layout>
     );
