@@ -145,6 +145,8 @@ Nhìn qua đoạn code này, khá đơn giản, nó chỉ thêm một chút Java
 
 Các `function` là một cách để xác định từng đoạn code nhỏ trong JavaScript, tuỳ vào mục đích của đoạn code đó, với một đầu vào và một đầu ra, cũng giống như một công thức toán học. Bạn truyền vào một số và nó trả về (`return`) một số khác.
 
+![function definition](/assets/function-definition.png)
+
 Trong ví dụ trên, các hàm không chỉ được sử dụng để xác định một đoạn mã mà còn để đặt tên cho chúng. Và tên đó được tự động biến thành một thẻ bởi React, sau đó bạn có thể chỉ cần sử dụng trong bất kỳ component khác trong project của mình, giống như thẻ `MenuItem` ở trên. Về cơ bản, bạn có thể nghĩ về một component React như một thẻ (tag) và như là một `function`, cả ba đều giống nhau. Khái niệm này sẽ trở nên phức tạp hơn khi bạn đi sâu hơn. Còn bây giờ, điều này sẽ giúp bạn hiểu các nguyên tắc cơ bản.
 
 Phần cuối cùng là đầu vào (input) của các component. Trong trường hợp này, đó là thuộc tính tên (`name`) của `MenuItem`. Các input trong React được gọi là props, viết tắt cho property (thuộc tính). Nếu bạn cần sử dụng một thuộc tính, ví dụ thuộc tính `name` trong ví dụ, bạn chỉ cần viết `props.name`. Bạn có thể tự do chọn bất kỳ tên nào bạn thích và sử dụng bao nhiêu lần tùy ý. Để truyền thuộc tính vào component, bạn sẽ thực hiện cú pháp gần tương tự như HTML: `<MenuItem name="Home" />`.
