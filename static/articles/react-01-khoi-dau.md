@@ -8,7 +8,6 @@ thumbnail: /assets/react-for-everyone.png
 date: '2019-03-10'
 serie: React cho mọi người
 ---
-
 Nhiều nhiều năm về trước, lập trình web từng vô cùng đơn giản. Bạn chỉ cần mở notepad, copy đoạn code dưới đây vào, lưu lại với tên `mypage.html` rồi mở nó lên bằng một trình duyệt bất kỳ:
 
 ```html
@@ -83,10 +82,10 @@ export function Page() {
 
 Đó là React, code cũng khá giống với ban đầu, nhưng đơn giản hơn. Những sự thay đổi đáng kể nhất:
 
-- Với React, bạn sẽ viết HTML code trong JavaScript (thay vì những cách khác).
-- Trang Page bây giờ sẽ là một function. Đó là cách để giải quyết vấn đề mà tôi sẽ giải thích bên dưới.
-- Function `sayHello` vẫn giữ nguyên như cũ, nhưng bạn không cần dùng thẻ `<script>` nữa.
-- Cuối cùng, nút `<button>` vẫn giống như HTML.
+* Với React, bạn sẽ viết HTML code trong JavaScript (thay vì những cách khác).
+* Trang Page bây giờ sẽ là một function. Đó là cách để giải quyết vấn đề mà tôi sẽ giải thích bên dưới.
+* Function `sayHello` vẫn giữ nguyên như cũ, nhưng bạn không cần dùng thẻ `<script>` nữa.
+* Cuối cùng, nút `<button>` vẫn giống như HTML.
 
 Có thể thấy được React hoàn toàn tập trung vào việc sử dụng ít thẻ hơn để tăng tốc quy trình làm việc. Nhưng đó không phải là lý do tại sao mọi người lại rất hào hứng với việc xây dựng mọi thứ bằng React. Nó không chỉ về việc sử dụng ít thẻ hơn, mà còn vì bạn có thể tạo nên các thẻ của riêng mình. Và các thẻ bạn tạo trong React được gọi là các component.
 
@@ -142,6 +141,12 @@ function Menu() {
 }
 ```
 
-Xem qua đoạn code này, nó sẽ trông khá đơn giản, chỉ cần thêm một chút JavaScript, như `function` và `return`. Tôi sẽ giải thích bên dưới, nhưng nói chung bạn sẽ tạo ra `MenuItem` trước, sau đó sử dụng bao nhiêu lần tùy thích trong Menu dưới dạng thẻ HTML thích hợp. Khá tuyệt phải không?
+Nhìn qua đoạn code này, khá đơn giản, nó chỉ thêm một chút JavaScript: `function` và `return`. Tôi sẽ giải thích bên dưới, nhưng nói chung bạn sẽ tạo ra `MenuItem` trước, sau đó sử dụng lại  bao nhiêu lần tùy thích trong `Menu`. Khá tuyệt phải không?
 
-Các `function` là một cách để xác định các khối mã nhỏ trong JavaScript với một đầu vào và một đầu ra, giống như một công thức toán học. Bạn truyền vào một số và nó trả về một số khác. Đó chính xác là những gì mà `return` làm ở đây.
+Các `function` là một cách để xác định từng đoạn code nhỏ trong JavaScript, tuỳ vào mục đích của đoạn code đó, với một đầu vào và một đầu ra, cũng giống như một công thức toán học. Bạn truyền vào một số và nó trả về (`return`) một số khác.
+
+![function definition](/assets/function-definition.png)
+
+Trong ví dụ trên, các hàm không chỉ được sử dụng để xác định một đoạn mã mà còn để đặt tên cho chúng. Và tên đó được tự động biến thành một thẻ bởi React, sau đó bạn có thể chỉ cần sử dụng trong bất kỳ component khác trong project của mình, giống như thẻ `MenuItem` ở trên. Về cơ bản, bạn có thể nghĩ về một component React như một thẻ (tag) và như là một `function`, cả ba đều giống nhau. Khái niệm này sẽ trở nên phức tạp hơn khi bạn đi sâu hơn. Còn bây giờ, điều này sẽ giúp bạn hiểu các nguyên tắc cơ bản.
+
+Phần cuối cùng là đầu vào (input) của các component. Trong trường hợp này, đó là thuộc tính tên (`name`) của `MenuItem`. Các input trong React được gọi là props, viết tắt cho property (thuộc tính). Nếu bạn cần sử dụng một thuộc tính, ví dụ thuộc tính `name` trong ví dụ, bạn chỉ cần viết `props.name`. Bạn có thể tự do chọn bất kỳ tên nào bạn thích và sử dụng bao nhiêu lần tùy ý. Để truyền thuộc tính vào component, bạn sẽ thực hiện cú pháp gần tương tự như HTML: `<MenuItem name="Home" />`.
