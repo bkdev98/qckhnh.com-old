@@ -91,7 +91,7 @@ Có thể thấy được React hoàn toàn tập trung vào việc sử dụng 
 
 ### React Components
 
-Chúng ta sẽ thử làm một ví dụ nữa, lần này là thanh điều hướng (navigation) cho trang web bằng HTML:
+Chúng ta sẽ thử làm một ví dụ nữa, lần này là thanh điều hướng (navbar) cho trang web bằng HTML:
 
 ```html
 <div>
@@ -102,9 +102,9 @@ Chúng ta sẽ thử làm một ví dụ nữa, lần này là thanh điều hư
 </div>
 ```
 
-Khá đơn giản, nhưng như bạn có thể thấy, rất lặp đi lặp lại. Đối với mỗi mục trình đơn, bạn cần phải viết một loạt các HTML chính xác, với các biểu tượng và tiêu đề khác nhau. Tệ hơn nữa, nếu sau này bạn quyết định thay đổi giao diện của một mục menu, bạn sẽ phải sao chép, dán và cập nhật nó cho từng mục.
+Khá đơn giản, nhưng như bạn có thể thấy, rất lặp đi lặp lại. Đối với mỗi mục trình đơn, bạn cần phải viết một loạt các thẻ HTML chính xác, với các icon và tiêu đề khác nhau. Tệ hơn nữa, nếu sau này bạn quyết định thay đổi giao diện của một mục menu, bạn sẽ phải copy, paste và cập nhật cho từng mục.
 
-Vì vậy, hãy thử giải quyết điều này giống như những người máy tính thông minh mà chúng ta đang có. Hãy tưởng tượng trong một giây rằng trên đầu trang của tất cả các thẻ hiện có, bạn có thể tạo các thẻ mới. Và nếu bạn có những siêu năng lực đó, bạn có thể tổ chức thực đơn của mình như thế này không?
+Để giải quyết vấn đề này, hãy tưởng tượng rằng ngoài các thẻ HTML hiện có, bạn có thể tạo ra các thẻ mới. Và nếu bạn có được siêu năng lực đó, bạn sẽ có thể làm lại thanh navbar của mình như thế này:
 
 ```jsx
 <div>
@@ -115,9 +115,9 @@ Vì vậy, hãy thử giải quyết điều này giống như những người 
 </div>
 ```
 
-Đẹp hơn và sạch hơn, chưa kể hiệu quả hơn. Bạn đã tạo ra phiên bản HTML của riêng mình, một thành phần được tạo riêng cho trang web mà bạn đang làm việc. Bạn gần như có thể nghĩ các thành phần của mình là các mẫu nhỏ (component), được kết hợp hoàn hảo với HTML thông qua các thẻ.
+Đẹp, gọn, và hiệu quả hơn. Bạn đã tạo ra một phiên bản HTML của riêng mình. Bạn có thể nghĩ các thẻ thành phần mới của mình là các mẫu nhỏ (component), có thể kết hợp hoàn hảo với HTML.
 
-Đây chính xác là những gì React cho phép bạn làm. Hãy cùng xem xét phiên bản chính xác của phần trên trong React.
+Đây chính xác là những gì React cho phép bạn làm. Hãy cùng xem phiên bản chính xác của đoạn code trên trong React.
 
 ```jsx
 function MenuItem(props) {
@@ -149,4 +149,6 @@ Các `function` là một cách để xác định từng đoạn code nhỏ tro
 
 Trong ví dụ trên, các hàm không chỉ được sử dụng để xác định một đoạn mã mà còn để đặt tên cho chúng. Và tên đó được tự động biến thành một thẻ bởi React, sau đó bạn có thể chỉ cần sử dụng trong bất kỳ component khác trong project của mình, giống như thẻ `MenuItem` ở trên. Về cơ bản, bạn có thể nghĩ về một component React như một thẻ (tag) và như là một `function`, cả ba đều giống nhau. Khái niệm này sẽ trở nên phức tạp hơn khi bạn đi sâu hơn. Còn bây giờ, điều này sẽ giúp bạn hiểu các nguyên tắc cơ bản.
 
-Phần cuối cùng là đầu vào (input) của các component. Trong trường hợp này, đó là thuộc tính tên (`name`) của `MenuItem`. Các input trong React được gọi là props, viết tắt cho property (thuộc tính). Nếu bạn cần sử dụng một thuộc tính, ví dụ thuộc tính `name` trong ví dụ, bạn chỉ cần viết `props.name`. Bạn có thể tự do chọn bất kỳ tên nào bạn thích và sử dụng bao nhiêu lần tùy ý. Để truyền thuộc tính vào component, bạn sẽ thực hiện cú pháp gần tương tự như HTML: `<MenuItem name="Home" />`.
+Phần cuối cùng là đầu vào (input) của các component. Trong trường hợp này, đó là thuộc tính tên (`name`) của `MenuItem`. Các input trong React được gọi là `props`, viết tắt cho property (thuộc tính). Nếu bạn cần sử dụng một thuộc tính, ví dụ thuộc tính `name` trong ví dụ, bạn chỉ cần viết `props.name`. Bạn có thể tự do chọn bất kỳ tên nào bạn thích và sử dụng bao nhiêu lần tùy ý. Để truyền thuộc tính vào component, bạn sẽ thực hiện cú pháp gần tương tự như HTML: `<MenuItem `**`name="Home"`**` />`.
+
+Đó là tất cả cho phần đầu tiên trong chuỗi bài **React cho mọi người**. Mọi người có góp ý hay thắc mắc thì gửi lời nhắn cho mình qua email hoặc khung chat phía dưới nhé.
