@@ -96,5 +96,11 @@ module.exports = {
         appId: '5hwf7nw43gmr',
       },
     },
+    {
+      resolve: 'gatsby-plugin-facebook-pixel',
+      options: {
+        pixelId: '395297037956822',
+      },
+    },
   ],
 };
