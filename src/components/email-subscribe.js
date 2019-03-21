@@ -88,7 +88,7 @@ const EmailSubscribe = () => {
 
   return (
     <Wrapper>
-      <Title>Nhận email bài viết và thủ thuật về lập trình mỗi tuần, huỷ bất cứ lúc nào.</Title>
+      <Title>Nhận email bài viết, thủ thuật và khoá học mới về lập trình mỗi tuần.</Title>
       <Form onSubmit={handleSubmit}>
         <Input
           value={email}
