@@ -2,6 +2,8 @@ import React, { useState } from 'react';
 import styled from 'styled-components';
 import addToMailchimp from 'gatsby-plugin-mailchimp';
 
+import { media } from '../utils/media';
+
 const Wrapper = styled.div`
   background: rgb(255, 229, 241);
   padding: 20px;
@@ -9,6 +11,9 @@ const Wrapper = styled.div`
   flex-direction: column;
   align-items: center;
   margin: 40px 0px;
+  ${media.thone`
+    margin: 0px 0px;
+  `};
 `;
 
 const Title = styled.p.attrs({

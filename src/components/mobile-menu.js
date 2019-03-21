@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { Link } from 'gatsby';
 import { Spring } from 'react-spring';
-import { FiSettings } from 'react-icons/fi';
+import { FiSun, FiMoon } from 'react-icons/fi';
 
 import styled from 'styled-components';
 import { media } from '../utils/media';
@@ -66,7 +66,7 @@ const NavLink = styled(Link)`
   text-decoration: none;
 `;
 const SettingWrapper = styled(NavListItem)`
-  margin-left: 23px;
+  margin: 0px auto 20px;
   &:before {
     display: none;
   }
@@ -79,17 +79,31 @@ const Setting = styled.button`
   }
   cursor: pointer;
   background-color: transparent;
-  font-size: 14px;
+  font-size: 24px;
   padding: 0px;
-  color: ${props => props.isDark ? '#FFF' : '#3C3C3E'};
+  color: ${props => props.isDark ? '#FB7EBB' : '#3C3C3E'};
   :hover {
     color: #FB7EBB;
   }
 `;
 
 class Menu extends Component {
+  state = {
+    toggleCount: 0,
+  }
+
+  handleChangeTheme = theme => {
+    this.props.changeSetting('theme', theme);
+    if (this.state.toggleCount < 9) {
+      this.setState(state => ({ toggleCount: state.toggleCount + 1 }))
+    } else {
+      this.props.toggleSetting();
+      this.setState({ toggleCount: 0 })
+    }
+  }
+
   render() {
-    const { menuOpen, handleMenuClick, settings, toggleSetting } = this.props;
+    const { menuOpen, handleMenuClick, settings } = this.props;
 
     return (
       <MenuContainer
@@ -126,7 +140,7 @@ class Menu extends Component {
                 </NavListItem>
               )}
             </Spring>
-            {settings.theme && <Spring from={{ marginBottom: 10, opacity: 0 }} to={{ marginBottom: 0, opacity: 1 }} delay={800}>
+            {/* {settings.theme && <Spring from={{ marginBottom: 10, opacity: 0 }} to={{ marginBottom: 0, opacity: 1 }} delay={800}>
               {styles => (
                 <SettingWrapper style={styles}>
                   <Setting isDark={settings.theme === 'dark'} onClick={toggleSetting}>
@@ -134,7 +148,7 @@ class Menu extends Component {
                   </Setting>
                 </SettingWrapper>
               )}
-            </Spring>}
+            </Spring>} */}
           </NavLinks>
         </Sidebar>
       </MenuContainer>

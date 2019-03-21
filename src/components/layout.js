@@ -36,7 +36,7 @@ class Layout extends Component {
     return (
       <>
         <SEO title='Home' />
-        <Header toggleSetting={this.toggleSetting} settings={settings} />
+        <Header toggleSetting={this.toggleSetting} settings={settings} changeSetting={changeSetting} />
         <Wrapper settings={settings}>
           {children}
         </Wrapper>

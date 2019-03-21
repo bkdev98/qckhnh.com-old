@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import styled from 'styled-components';
 import { Spring } from 'react-spring';
 import { Link } from 'gatsby';
-import { FiSettings } from 'react-icons/fi';
+import { FiMoon, FiSun } from 'react-icons/fi';
 
 import { throttle } from '../utils/math';
 import { media } from '../utils/media';
@@ -151,10 +151,24 @@ const Setting = styled.button`
   border: none;
   cursor: pointer;
   background-color: transparent;
-  font-size: 14px;
+  font-size: 18px;
   padding: 0px;
   color: #FB7EBB;
   margin-top: 3px;
+`;
+
+const SettingWrapper = styled.div`
+  display: none;
+  margin-right: 15px;
+  ${media.tablet`display: block;`};
+  ${Setting} {
+    font-size: 24px;
+    margin-top: 0px;
+    padding: 10px;
+    svg {
+      margin-top: 5px;
+    }
+  }
 `;
 
 const NavListItem = styled.li`
@@ -203,6 +217,7 @@ class Header extends Component {
     lastScrollTop: 0,
     scrollDirection: 'none',
     menuOpen: false,
+    toggleCount: 0,
   }
 
   componentDidMount() {
@@ -252,7 +267,7 @@ class Header extends Component {
   handleKeydown = evt => {
     const { menuOpen } = this.state;
 
-    if (!menuOpen) {
+    if (!menuOpen || !evt) {
       return;
     }
 
@@ -266,16 +281,26 @@ class Header extends Component {
   handleMenuClick = e => {
     const target = e.target;
     const isLink = target.hasAttribute('href');
-    const isContainer = target.classList && target.classList[0].includes('MenuContainer');
+    const isContainer = target.classList && target.classList[0] && target.classList[0].includes('MenuContainer');
 
     if (isLink || isContainer) {
       this.toggleMenu();
     }
   }
 
+  handleChangeTheme = theme => {
+    this.props.changeSetting('theme', theme);
+    if (this.state.toggleCount < 9) {
+      this.setState(state => ({ toggleCount: state.toggleCount + 1 }))
+    } else {
+      this.props.toggleSetting();
+      this.setState({ toggleCount: 0 })
+    }
+  }
+
   render() {
     const { scrollDirection, menuOpen } = this.state;
-    const { toggleSetting, settings } = this.props;
+    const { toggleSetting, settings, changeSetting } = this.props;
 
     return (
       <Wrapper scrollDirection={scrollDirection} isDark={settings.theme === 'dark'}>
@@ -287,13 +312,29 @@ class Header extends Component {
               </LogoWrapper>
             )}
           </Spring>
+          <div style={{ display: "flex", alignItems: 'center' }}>
+            <SettingWrapper>
+              {settings.theme && <Spring from={{ marginBottom: 10, opacity: 0 }} to={{ marginBottom: 0, opacity: 1 }} delay={100}>
+                {styles => settings.theme === 'dark'
+                  ? (
+                    <Setting isDark={settings.theme === 'dark'} style={styles} onClick={() => this.handleChangeTheme('light')}>
+                      <FiMoon />
+                    </Setting>
+                  ) : (
+                    <Setting isDark={settings.theme === 'dark'} style={styles} onClick={() => this.handleChangeTheme('dark')}>
+                      <FiSun />
+                    </Setting>
+                  )
+                }
+              </Spring>}
+            </SettingWrapper>
 
-          <Hamburger isDark={settings.theme === 'dark'} onClick={this.toggleMenu}>
-            <HamburgerBox>
-              <HamburgerInner menuOpen={menuOpen} />
-            </HamburgerBox>
-          </Hamburger>
-
+            <Hamburger isDark={settings.theme === 'dark'} onClick={this.toggleMenu}>
+              <HamburgerBox>
+                <HamburgerInner menuOpen={menuOpen} />
+              </HamburgerBox>
+            </Hamburger>
+          </div>
           <NavLinks>
             <NavList isDark={settings.theme === 'dark'}>
               <Spring from={{ marginBottom: 10, opacity: 0 }} to={{ marginBottom: 0, opacity: 1 }} delay={300}>
@@ -324,12 +365,25 @@ class Header extends Component {
                   </NavListItem>
                 )}
               </Spring>
-              {settings.theme && <Spring from={{ marginBottom: 10, opacity: 0 }} to={{ marginBottom: 0, opacity: 1 }} delay={800}>
+              {/* {settings.theme && <Spring from={{ marginBottom: 10, opacity: 0 }} to={{ marginBottom: 0, opacity: 1 }} delay={800}>
                 {styles => (
                   <Setting isDark={settings.theme === 'dark'} style={styles} onClick={toggleSetting}>
                     <FiSettings />
                   </Setting>
                 )}
+              </Spring>} */}
+              {settings.theme && <Spring from={{ marginBottom: 10, opacity: 0 }} to={{ marginBottom: 0, opacity: 1 }} delay={800}>
+                {styles => settings.theme === 'dark'
+                  ? (
+                    <Setting isDark={settings.theme === 'dark'} style={styles} onClick={() => this.handleChangeTheme('light')}>
+                      <FiMoon />
+                    </Setting>
+                  ) : (
+                    <Setting isDark={settings.theme === 'dark'} style={styles} onClick={() => this.handleChangeTheme('dark')}>
+                      <FiSun />
+                    </Setting>
+                  )
+                }
               </Spring>}
             </NavList>
           </NavLinks>
@@ -338,6 +392,7 @@ class Header extends Component {
         <MobileMenu
           menuOpen={menuOpen}
           settings={settings}
+          changeSetting={changeSetting}
           toggleSetting={toggleSetting}
           handleMenuClick={e => this.handleMenuClick(e)}
         />
