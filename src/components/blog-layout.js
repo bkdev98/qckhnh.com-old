@@ -244,8 +244,8 @@ class BlogLayout extends Component {
     setTimeout(() => this.setState({ revealTitle: true }), 300);
 
     // Active darkmode automatically
-    const now = new Date().getHours();
-    if (now >= 18 || now < 6) {
+    const now = new window.Date();
+    if (now.getHours() >= 18 || now.getHours() < 6) {
       this.handleChangeSetting('theme', 'dark');
     } else {
       this.handleChangeSetting('theme', 'light');
