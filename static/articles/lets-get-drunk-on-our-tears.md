@@ -2,6 +2,7 @@
 title: Let's get drunk on our tears
 description: Cảm giác tôi đã ở gần hơn với câu trả lời mà mình luôn tìm kiếm.
 tag: general
+thumbnail: /assets/a-step-you-cant-take-back.png
 date: '2019-04-01'
 ---
 Tôi nhận mình là một người hướng nội (introvert), nếu có ai đó đã định nghĩa như vậy.
