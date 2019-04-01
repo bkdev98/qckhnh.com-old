@@ -14,7 +14,7 @@ Một người “extroverted introvert” có thể rất năng động vào ba
 
 Thích nghi, từ mà theo tôi là hợp lý để diễn tả việc này. Tôi hay nói vui rằng cũng giống như mấy đồ điện tử, quá trình thích nghi này tiêu tốn khá nhiều pin, nhưng chỉ cần sạc lại năng lượng hướng nội là lại có thể dùng tốt. Như thế nào? Không như thế nào cả, đơn giản là bạn xóa chữ “extroverted” ra khỏi cuộc sống. Một buổi sáng mình thức dậy sớm, làm đồ ăn sáng, nằm dài ra ghế đọc lại Trăm năm cô đơn, mua vé đi xem phim một mình, ngắm 1 bạn trong quán cafe thật lâu mà ko cần phải làm quen, không phải mở miệng trong vòng 24 tiếng.
 
-Giống như ngay lúc này đây, lại viết vời trong cơn mưa nhẹ nhàng đầu tháng tư.
+Giống như ngay lúc này đây, viết vời trong cơn mưa nhẹ nhàng đầu tháng tư.
 
 Cảm giác tôi đã ở gần hơn với câu trả lời mà mình luôn tìm kiếm. Sẽ là một chút mất mát, một chút buồn. Mà cũng chẳng to tát gì, những ngày thế này, dễ chịu nhất là lại đắm chìm vào vài bộ phim cũ.
 
