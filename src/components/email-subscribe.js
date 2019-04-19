@@ -103,7 +103,6 @@ const EmailSubscribe = () => {
               setMessage('')
             }
           }}
-          autoFocus
           placeholder="Email"
         />
         <SubmitButton disabled={sending}>Đăng ký</SubmitButton>
