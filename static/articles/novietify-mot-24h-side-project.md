@@ -125,7 +125,7 @@ Nếu có bất kỳ vấn đề hay câu hỏi nào cứ gửi tin nhắn hay m
 * **17/04 10:19 AM**: Kiểm tra lần cuối và chia sẻ Novietify lên mạng xã hội.
 * **17/04 (rest of the day)**: Bắt đầu một dự án khác + Đọc comment và ngồi khóc 😂.
   …
-* **18/04 05:30 PM**: Thông báo phim _**đầu tiên**_ được Novietify gửi, trong lúc mình đang ngủ, cũng chính là bộ phim Avenger Endgame.
+* **18/04 05:30 PM**: Thông báo phim **_đầu tiên_** được Novietify gửi, trong lúc mình đang ngủ, cũng chính là bộ phim Avenger Endgame.
 * **18/04 07:00 PM**: Ngủ dậy và ngồi khóc.
 
 ![crying](/assets/novietify-crying.png)
