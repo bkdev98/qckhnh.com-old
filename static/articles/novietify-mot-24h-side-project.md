@@ -16,8 +16,6 @@ Bạn đang đọc bài đầu tiên của _Featurette_, nhân vật chính hôm
 
 ![novietify screenshot](/assets/novietify-screenshot.png)
 
-
-
 ## Ý tưởng
 
 Ý tưởng đã được phác thảo từ ít ngày trước, sau một cuộc nhậu để họp bàn về sự ra đời của một nhóm các fanboy Marvel muốn đi xem _Endgame_ buổi chiếu sớm. Vậy là không được chậm trễ nữa vì thời gian công chiếu sắp đến, sau một ngày 15/04/2019 _ngủ_, mình quyết định _bay_ ngay đêm đó.
@@ -128,9 +126,10 @@ Nếu có bất kỳ vấn đề hay câu hỏi nào cứ gửi tin nhắn hay m
 * **17/04 (ngay sau đó)**: Tên miền mới hoạt động (novietify.qckhnh.com).
 * **17/04 10:19 AM**: Kiểm tra lần cuối và chia sẻ Novietify lên mạng xã hội.
 * **17/04 (rest of the day)**: Bắt đầu một dự án khác + Đọc comment và ngồi khóc 😂.
-  
+
 …
-* **18/04 05:30 PM**: Thông báo phim _**đầu tiên**_ được Novietify gửi, trong lúc mình đang ngủ, cũng chính là bộ phim Avenger Endgame.
+
+* **18/04 05:30 PM**: Thông báo phim **_đầu tiên_** được Novietify gửi, trong lúc mình đang ngủ, cũng chính là bộ phim Avenger Endgame.
 * **18/04 07:00 PM**: Ngủ dậy và ngồi khóc.
 
 ![crying](/assets/novietify-crying.png)
