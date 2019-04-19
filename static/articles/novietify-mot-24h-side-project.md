@@ -14,6 +14,10 @@ Tên của serie: _Featurette_ - là một từ phổ biến hơn trong điện 
 
 Bạn đang đọc bài đầu tiên của _Featurette_, nhân vật chính hôm nay là [Novietify](https://novietify.qckhnh.com/)  - Một web app nhỏ mình thực hiện trong khoảng 20 tiếng (10h code) hồi đầu tuần.
 
+![novietify screenshot](/assets/novietify-screenshot.png)
+
+
+
 ## Ý tưởng
 
 Ý tưởng đã được phác thảo từ ít ngày trước, sau một cuộc nhậu để họp bàn về sự ra đời của một nhóm các fanboy Marvel muốn đi xem _Endgame_ buổi chiếu sớm. Vậy là không được chậm trễ nữa vì thời gian công chiếu sắp đến, sau một ngày 15/04/2019 _ngủ_, mình quyết định _bay_ ngay đêm đó.
