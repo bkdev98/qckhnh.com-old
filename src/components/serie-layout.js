@@ -38,7 +38,7 @@ const getMarginTop = idx => {
   return 0;
 };
 
-const Series = ({ data: { articles }, pageContext }) => (
+const Series = ({ data: { tutorials }, pageContext }) => (
   <Layout>
     <SEO
       title={pageContext.title}
@@ -54,7 +54,7 @@ const Series = ({ data: { articles }, pageContext }) => (
           <Description>{pageContext.description}</Description>
         </Meta>
         <Row style={{ marginTop: 80 }}>
-          {articles.edges.map(({ node }, idx) => (
+          {tutorials.edges.map(({ node }, idx) => (
             <Col lg={4} md={6} sm={12} key={node.id} style={{ marginTop: getMarginTop(idx) }}>
               <ArticleCard data={node} />
             </Col>
@@ -69,8 +69,8 @@ export default Series;
 
 export const pageQuery = graphql`
   query SeriesQuery($title: String!) {
-    articles: allMarkdownRemark(
-      filter: { fileAbsolutePath: { regex: "/articles/" }, frontmatter: { serie: { eq: $title } } }
+    tutorials: allMarkdownRemark(
+      filter: { fileAbsolutePath: { regex: "/tutorials/" }, frontmatter: { serie: { eq: $title } } }
       sort: { fields: [frontmatter___date], order: DESC }
     ) {
       edges {
