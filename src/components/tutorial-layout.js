@@ -78,14 +78,17 @@ const Thumbnail = styled.div`
   background-image: url(${props => props.url});
   background-position: center;
   background-size: cover;
+  background-repeat: no-repeat;
   ${media.tablet`
     height: ${props => props.percent * 400}px;
   `};
   ${media.thone`
     height: ${props => props.percent * 350}px;
+    background-size: contain;
   `};
   ${media.phablet`
     height: ${props => props.percent * 300}px;
+    background-size: contain;
   `};
 `;
 
@@ -110,14 +113,14 @@ const Title = styled(ReactRevealText)`
     font-size: 30px;
     padding: 0 50px;
     letter-spacing: 14px;
-    top: -150px;
+    top: -180px;
     line-height: 45px;
   `};
   ${media.thone`
     font-size: 28px;
     padding: 0 20px;
     letter-spacing: 10px;
-    top: -140px;
+    top: -170px;
     line-height: 40px;
   `};
 `;
