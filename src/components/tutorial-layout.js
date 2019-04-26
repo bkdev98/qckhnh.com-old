@@ -97,7 +97,7 @@ const TextWrapper = styled.div`
 const Title = styled(ReactRevealText)`
   padding: 0 100px;
   position: absolute;
-  top: -157px;
+  top: -200px;
   color: #FB7EBB;
   font-weight: 900;
   z-index: 12;
@@ -123,7 +123,7 @@ const Title = styled(ReactRevealText)`
 `;
 
 const Content = styled.div`
-  margin: 50px 100px 50px;
+  margin: 90px 100px 50px;
   position: relative;
   font-size: ${props => `${props.settings.fontSize}px`};
   letter-spacing: 2px;
@@ -133,6 +133,9 @@ const Content = styled.div`
   font-weight: 300;
   h1, h2, h3, h4, h5, p {
     margin-bottom: 20px;
+  }
+  h3 {
+    line-height: 35px;
   }
   a {
     background-color: transparent;
@@ -152,10 +155,10 @@ const Content = styled.div`
     color: #FFF;
   }
   ${media.tablet`
-    margin: 50px 30px;
+    margin: 80px 50px 30px;
   `};
   ${media.thone`
-    margin: 50px 20px;
+    margin: 80px 50px 20px;
   `};
 `;
 
@@ -322,8 +325,8 @@ class TutorialLayout extends Component {
             <Title show={revealTitle}>{tutorial.frontmatter.title}</Title>
             {/* {this.renderSerie(sameSerie.edges)} */}
             <Spring
-              from={{ opacity: 0, marginTop: 120 }}
-              to={{ opacity: 1, marginTop: 80 }}
+              from={{ opacity: 0, marginTop: 160 }}
+              to={{ opacity: 1, marginTop: 120 }}
               delay={400}
             >
               {props => (
@@ -332,7 +335,7 @@ class TutorialLayout extends Component {
             </Spring>
             {this.renderSerie(sameSerie ? sameSerie.edges : [])}
             <More settings={settings}>
-              <Link to='/tutorial'>
+              <Link to='/tutorials'>
                 <Spring
                   from={{ width: 0 }}
                   to={{ width: 200 }}
