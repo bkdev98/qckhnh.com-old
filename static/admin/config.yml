@@ -20,7 +20,7 @@ collections:
       - { name: body, label: Nội dung, widget: markdown, required: false }
       - { name: date, label: Ngày đăng, widget: date, format: YYYY-MM-DD }
   - name: tutorials
-    label: Lập trình
+    label: Học thuật
     folder: static/tutorials
     create: true
     fields:

@@ -122,18 +122,25 @@ class Menu extends Component {
             <Spring from={{ marginBottom: 10, opacity: 0 }} to={{ marginBottom: 0, opacity: 1 }} delay={400}>
               {styles => (
                 <NavListItem style={styles}>
-                  <NavLink to='/blog'>Articles</NavLink>
+                  <NavLink to='/tutorials'>Tutorials</NavLink>
                 </NavListItem>
               )}
             </Spring>
             <Spring from={{ marginBottom: 10, opacity: 0 }} to={{ marginBottom: 0, opacity: 1 }} delay={500}>
               {styles => (
                 <NavListItem style={styles}>
-                  <NavLink to='/projects'>Projects</NavLink>
+                  <NavLink to='/blog'>Blog</NavLink>
                 </NavListItem>
               )}
             </Spring>
             <Spring from={{ marginBottom: 10, opacity: 0 }} to={{ marginBottom: 0, opacity: 1 }} delay={600}>
+              {styles => (
+                <NavListItem style={styles}>
+                  <NavLink to='/projects'>Projects</NavLink>
+                </NavListItem>
+              )}
+            </Spring>
+            <Spring from={{ marginBottom: 10, opacity: 0 }} to={{ marginBottom: 0, opacity: 1 }} delay={700}>
               {styles => (
                 <NavListItem style={styles}>
                   <NavLink to='contact'>Contact</NavLink>

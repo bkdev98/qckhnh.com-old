@@ -193,6 +193,35 @@ const More = styled.div`
   }
 `;
 
+const Serie = styled.div`
+  margin: 80px 100px 0px;
+  ${media.tablet`
+    margin: 80px 30px 0px;
+  `};
+  ${media.thone`
+    margin: 80px 20px 0px;
+  `};
+  border: 2px solid #FB7EBB;
+  padding: 20px;
+  font-size: 15px;
+  a {
+    color: #FB7EBB;
+    text-decoration: none;
+    box-shadow: 0px 2px 0px 0px #FB7EBB;
+    :hover {
+      box-shadow: 0px 0px 0px 0px #FB7EBB;
+    }
+  }
+  ul {
+    list-style: square;
+    padding-left: 20px;
+    margin-top: 10px;
+  }
+  li {
+    margin-bottom: 0px;
+  }
+`;
+
 const DEFAULT_SETTINGS = {
   theme: 'light',
   font: 'Roboto Mono',
@@ -200,7 +229,7 @@ const DEFAULT_SETTINGS = {
   lineHeight: 1.8,
 }
 
-class BlogLayout extends Component {
+class TutorialLayout extends Component {
   state = {
     revealTitle: false,
     transition: true,
@@ -234,16 +263,36 @@ class BlogLayout extends Component {
 
   handleResetSetting = () => this.setState({ settings: DEFAULT_SETTINGS }, () => localStorage.removeItem(STORAGE_KEY))
 
+  renderSerie = (data) => {
+    const { data: { tutorial, serie } } = this.props;
+    return data.length > 0 && (
+      <Serie>
+        <p>This tutorial belongs to serie <Link to={`/serie${serie && serie.fields.slug}`}>{tutorial.frontmatter.serie}</Link>:</p>
+        <ul>
+          {data.map(({ node }) => tutorial.frontmatter.title === node.frontmatter.title
+            ? (
+              <li key={node.fields.slug}>{node.frontmatter.title} (currently reading)</li>
+            )
+            : (
+              <li key={node.fields.slug}>
+                <Link to={node.fields.slug}>{node.frontmatter.title}</Link>
+              </li>
+            ))}
+        </ul>
+      </Serie>
+    );
+  }
+
   render() {
-    const { data: { article } } = this.props;
+    const { data: { tutorial, sameSerie } } = this.props;
     const { revealTitle, transition, settings } = this.state;
 
     return (
       <Layout settings={settings} changeSetting={this.handleChangeSetting} resetSetting={this.handleResetSetting}>
         <SEO
-          title={article.frontmatter.title}
-          description={article.frontmatter.description}
-          thumbnail={article.frontmatter.thumbnail}
+          title={tutorial.frontmatter.title}
+          description={tutorial.frontmatter.description}
+          thumbnail={tutorial.frontmatter.thumbnail}
         />
         <Wrapper settings={settings}>
           <Spring
@@ -253,10 +302,10 @@ class BlogLayout extends Component {
           >
             {props => (
               <BlogInfo style={props}>
-                <Tag>{article.frontmatter.tag}</Tag>
+                <Tag>{tutorial.frontmatter.tag}</Tag>
                 <Seperator> |</Seperator>
-                <Date>{article.frontmatter.date}</Date>
-                <TimeRead>{readingTime(article.html).text}</TimeRead>
+                <Date>{tutorial.frontmatter.date}</Date>
+                <TimeRead>{readingTime(tutorial.html).text}</TimeRead>
               </BlogInfo>
             )}
           </Spring>
@@ -267,10 +316,10 @@ class BlogLayout extends Component {
             leave={{ percent: 0 }}
             trail={200}
           >
-            {transition => transition && (props => <Thumbnail url={article.frontmatter.thumbnail} {...props} />)}
+            {transition => transition && (props => <Thumbnail url={tutorial.frontmatter.thumbnail} {...props} />)}
           </Transition>
           <TextWrapper>
-            <Title show={revealTitle}>{article.frontmatter.title}</Title>
+            <Title show={revealTitle}>{tutorial.frontmatter.title}</Title>
             {/* {this.renderSerie(sameSerie.edges)} */}
             <Spring
               from={{ opacity: 0, marginTop: 120 }}
@@ -278,11 +327,12 @@ class BlogLayout extends Component {
               delay={400}
             >
               {props => (
-                <Content settings={settings} dangerouslySetInnerHTML={{ __html: article.html }} style={props} />
+                <Content settings={settings} dangerouslySetInnerHTML={{ __html: tutorial.html }} style={props} />
               )}
             </Spring>
+            {this.renderSerie(sameSerie ? sameSerie.edges : [])}
             <More settings={settings}>
-              <Link to='/blog'>
+              <Link to='/tutorial'>
                 <Spring
                   from={{ width: 0 }}
                   to={{ width: 200 }}
@@ -291,7 +341,7 @@ class BlogLayout extends Component {
                     <div style={props} />
                   )}
                 </Spring>
-                <span>Quay lại blog</span>
+                <span>Quay lại</span>
               </Link>
             </More>
           </TextWrapper>
@@ -302,18 +352,40 @@ class BlogLayout extends Component {
   }
 }
 
-export default BlogLayout;
+export default TutorialLayout;
 
 export const query = graphql`
-  query($slug: String!) {
-    article: markdownRemark(fields: { slug: { eq: $slug } }) {
+  query($slug: String!, $serie: String) {
+    tutorial: markdownRemark(fields: { slug: { eq: $slug } }) {
       html
       frontmatter {
         title
         description
         tag
         thumbnail
+        serie
         date(formatString: "DD-MM-YYYY")
+      }
+    }
+    serie: markdownRemark(frontmatter: { title: { eq: $serie } }) {
+      fields {
+        slug
+      }
+    }
+    sameSerie: allMarkdownRemark(
+      filter: { frontmatter: { serie: { eq: $serie } } }
+      sort: { fields: [frontmatter___date], order: DESC }
+    ) {
+      edges {
+        node {
+          fields {
+            slug
+          }
+          frontmatter {
+            title
+            date(formatString: "DD-MM-YYYY")
+          }
+        }
       }
     }
   }

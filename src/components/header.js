@@ -198,7 +198,7 @@ const NavListItemLink = styled(Link)`
   cursor: pointer;
   text-decoration: none;
   transition: all 0.25s cubic-bezier(0.645, 0.045, 0.355, 1) 0s;
-  padding: 12px 10px;
+  padding: 10px 10px;
 `;
 
 const LogoWrapper = styled(Link)`
@@ -347,18 +347,25 @@ class Header extends Component {
               <Spring from={{ marginBottom: 10, opacity: 0 }} to={{ marginBottom: 0, opacity: 1 }} delay={400}>
                 {styles => (
                   <NavListItem style={styles}>
-                    <NavListItemLink to='/blog'>Blog</NavListItemLink>
+                    <NavListItemLink to='/tutorials'>Tutorials</NavListItemLink>
                   </NavListItem>
                 )}
               </Spring>
               <Spring from={{ marginBottom: 10, opacity: 0 }} to={{ marginBottom: 0, opacity: 1 }} delay={500}>
                 {styles => (
                   <NavListItem style={styles}>
-                    <NavListItemLink to='/projects'>Projects</NavListItemLink>
+                    <NavListItemLink to='/blog'>Blog</NavListItemLink>
                   </NavListItem>
                 )}
               </Spring>
               <Spring from={{ marginBottom: 10, opacity: 0 }} to={{ marginBottom: 0, opacity: 1 }} delay={600}>
+                {styles => (
+                  <NavListItem style={styles}>
+                    <NavListItemLink to='/projects'>Projects</NavListItemLink>
+                  </NavListItem>
+                )}
+              </Spring>
+              <Spring from={{ marginBottom: 10, opacity: 0 }} to={{ marginBottom: 0, opacity: 1 }} delay={700}>
                 {styles => (
                   <NavListItem style={styles}>
                     <NavListItemLink to='/contact'>Contact</NavListItemLink>

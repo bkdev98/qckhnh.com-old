@@ -27,6 +27,17 @@ exports.createPages = ({ graphql, actions }) => {
               fields {
                 slug
               }
+            }
+          }
+        }
+        tutorials: allMarkdownRemark(
+          filter: { fileAbsolutePath: { regex: "/tutorials/" } }
+        ) {
+          edges {
+            node {
+              fields {
+                slug
+              }
               frontmatter {
                 serie
               }
@@ -55,6 +66,15 @@ exports.createPages = ({ graphql, actions }) => {
         createPage({
           path: node.fields.slug,
           component: path.resolve('./src/components/blog-layout.js'),
+          context: {
+            slug: node.fields.slug,
+          },
+        });
+      });
+      result.data.tutorials.edges.forEach(({ node }) => {
+        createPage({
+          path: node.fields.slug,
+          component: path.resolve('./src/components/tutorial-layout.js'),
           context: {
             slug: node.fields.slug,
             serie: node.frontmatter.serie || 'no-serie',
