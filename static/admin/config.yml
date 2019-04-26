@@ -39,7 +39,6 @@ collections:
           searchFields: ['title'],
           valueField: 'title',
           displayFields: ['title'],
-          required: false
         }
   - name: series
     label: Loạt bài
