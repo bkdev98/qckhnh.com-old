@@ -1,5 +1,5 @@
 ---
-title: Một số nguồn học JavaScript cho người mới bắt đầu
+title: Nguồn học JavaScript cho người mới bắt đầu
 description: 'Những nguồn học JS thuần thú vị, chất lượng và miễn phí.'
 tag: javascript
 thumbnail: /assets/js-resources.png
