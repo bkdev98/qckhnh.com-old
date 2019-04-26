@@ -126,7 +126,7 @@ const Title = styled(ReactRevealText)`
 `;
 
 const Content = styled.div`
-  margin: 90px 100px 50px;
+  margin: 50px 100px 50px;
   position: relative;
   font-size: ${props => `${props.settings.fontSize}px`};
   letter-spacing: 2px;
@@ -158,10 +158,10 @@ const Content = styled.div`
     color: #FFF;
   }
   ${media.tablet`
-    margin: 80px 50px 30px;
+    margin: 50px 30px;
   `};
   ${media.thone`
-    margin: 80px 50px 20px;
+    margin: 50px 20px;
   `};
 `;
 
