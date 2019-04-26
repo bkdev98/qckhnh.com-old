@@ -9,7 +9,7 @@ slug: { encoding: ascii, clean_accents: true }
 
 collections:
   - name: articles
-    label: Bài viết
+    label: Cuộc sống
     folder: static/articles
     create: true
     fields:
@@ -17,22 +17,36 @@ collections:
       - { name: description, label: Mô tả ngắn, widget: text, required: false }
       - { name: tag, label: Thẻ bài viết, widget: string, required: false }
       - { name: thumbnail, label: Ảnh bìa, widget: image, required: false }
-      - { name: body, label: Nội dung, widget: markdown }
+      - { name: body, label: Nội dung, widget: markdown, required: false }
       - { name: date, label: Ngày đăng, widget: date, format: YYYY-MM-DD }
-      - label: 'Loạt bài'
-        name: 'serie'
-        widget: 'relation'
-        required: false
-        collection: 'series'
-        searchFields: ['title']
-        valueField: 'title'
-        displayFields: ['title', 'date']
+  - name: tutorials
+    label: Lập trình
+    folder: static/tutorials
+    create: true
+    fields:
+      - { name: title, label: Tiêu đề }
+      - { name: description, label: Mô tả ngắn, widget: text, required: false }
+      - { name: tag, label: Thẻ bài viết, widget: string, required: false }
+      - { name: thumbnail, label: Ảnh bìa, widget: image, required: false }
+      - { name: body, label: Nội dung, widget: markdown, required: false }
+      - { name: date, label: Ngày đăng, widget: date, format: YYYY-MM-DD }
+      - {
+          name: 'serie',
+          label: 'Loạt bài',
+          widget: 'relation',
+          required: false,
+          collection: 'series',
+          searchFields: ['title'],
+          valueField: 'title',
+          displayFields: ['title'],
+          required: false
+        }
   - name: series
     label: Loạt bài
     folder: static/series
     create: true
     fields:
       - { name: title, label: Tiêu đề }
-      - { name: description, label: Mô tả ngắn, widget: text }
-      - { name: thumbnail, label: Ảnh bìa, widget: image }
+      - { name: description, label: Mô tả ngắn, widget: text, required: false }
+      - { name: thumbnail, label: Ảnh bìa, widget: image, required: false }
       - { name: date, label: Ngày đăng, widget: date, format: YYYY-MM-DD }
