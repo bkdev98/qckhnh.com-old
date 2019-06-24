@@ -7,7 +7,7 @@ description: >-
 
   đề phim...
 tag: movies
-thumbnail: /assets/screen-shot-2019-06-14-at-3.25.01-pm.png
+thumbnail: /assets/mot-thoi-gian-dai.png
 date: '2019-06-24'
 ---
 Tôi xem Rocketman một mình. Đối với tôi, cảnh đẹp nhất là khi Elton dần chìm xuống đáy hồ và gặp lại chính mình lúc nhỏ, ánh sáng từ thế giới bên trên rọi xuống, tan dần vào giai điệu của ca khúc chủ đề phim. Một cảnh phim tuyệt vời về cuộc sống và sự cô độc, rung động đến từng tế bào.
